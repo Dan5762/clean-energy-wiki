@@ -1,0 +1,154 @@
+# Central Bibliography
+# All sources referenced in content files should be listed here.
+# Use the source key (e.g., "shockley1961") in content with [@shockley1961] syntax.
+
+# =============================================================================
+# FOUNDATIONAL PAPERS
+# =============================================================================
+
+shockley1961:
+  type: journal
+  authors: [William Shockley, Hans J. Queisser]
+  title: "Detailed Balance Limit of Efficiency of p-n Junction Solar Cells"
+  journal: Journal of Applied Physics
+  year: 1961
+  volume: 32
+  pages: "510-519"
+  doi: 10.1063/1.1736034
+  confidence: foundational
+
+betz1920:
+  type: journal
+  authors: [Albert Betz]
+  title: "Das Maximum der theoretisch möglichen Ausnützung des Windes durch Windmotoren"
+  journal: Zeitschrift für das gesamte Turbinenwesen
+  year: 1920
+  volume: 26
+  pages: "307-309"
+  confidence: foundational
+  notes: Original derivation of the Betz limit
+
+carnot1824:
+  type: book
+  authors: [Sadi Carnot]
+  title: "Réflexions sur la puissance motrice du feu"
+  year: 1824
+  publisher: Bachelier
+  confidence: foundational
+  notes: Foundational work on thermodynamic efficiency limits
+
+planck1901:
+  type: journal
+  authors: [Max Planck]
+  title: "Ueber das Gesetz der Energieverteilung im Normalspectrum"
+  journal: Annalen der Physik
+  year: 1901
+  volume: 309
+  issue: 3
+  pages: "553-563"
+  doi: 10.1002/andp.19013090310
+  confidence: foundational
+
+# =============================================================================
+# INDUSTRY REPORTS
+# =============================================================================
+
+fraunhofer2024:
+  type: report
+  authors: [Fraunhofer ISE]
+  title: "Photovoltaics Report"
+  institution: Fraunhofer Institute for Solar Energy Systems
+  year: 2024
+  url: https://www.ise.fraunhofer.de/en/publications/studies/photovoltaics-report.html
+  accessed: "2024-12-01"
+  confidence: industry_authoritative
+
+iea2024_renewables:
+  type: report
+  authors: [International Energy Agency]
+  title: "Renewables 2024"
+  institution: IEA
+  year: 2024
+  url: https://www.iea.org/reports/renewables-2024
+  confidence: industry_authoritative
+
+irena2024_costs:
+  type: report
+  authors: [IRENA]
+  title: "Renewable Power Generation Costs in 2023"
+  institution: International Renewable Energy Agency
+  year: 2024
+  url: https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023
+  confidence: industry_authoritative
+
+nrel2024_atb:
+  type: report
+  authors: [NREL]
+  title: "Annual Technology Baseline 2024"
+  institution: National Renewable Energy Laboratory
+  year: 2024
+  url: https://atb.nrel.gov/
+  confidence: industry_authoritative
+
+# =============================================================================
+# PEER-REVIEWED ARTICLES
+# =============================================================================
+
+fthenakis2009:
+  type: journal
+  authors: [Vasilis Fthenakis]
+  title: "Sustainability of photovoltaics: The case for thin-film solar cells"
+  journal: Renewable and Sustainable Energy Reviews
+  year: 2009
+  volume: 13
+  issue: 9
+  pages: "2746-2750"
+  doi: 10.1016/j.rser.2009.05.001
+  confidence: peer_reviewed
+
+# =============================================================================
+# AUTHOR CALCULATIONS
+# =============================================================================
+# Use for derived values that combine data from multiple sources
+
+author_calculation_pv_land:
+  type: calculation
+  description: >
+    Land use estimate derived from module efficiency (20%), capacity factor (25%),
+    and spacing requirements. Based on utility-scale installation data.
+  sources: [fraunhofer2024, nrel2024_atb]
+  confidence: author_derived
+
+# =============================================================================
+# TEMPLATE FOR NEW ENTRIES
+# =============================================================================
+
+# source_key:
+#   type: journal | book | report | website | thesis | calculation
+#   authors: [Author One, Author Two]
+#   title: "Full Title"
+#   
+#   # For journals:
+#   journal: Journal Name
+#   volume: 
+#   issue: 
+#   pages: "start-end"
+#   
+#   # For books:
+#   publisher: 
+#   edition: 
+#   
+#   # For reports:
+#   institution: 
+#   report_number: 
+#   
+#   # Common fields:
+#   year: 
+#   doi:                    # Preferred identifier
+#   url:                    # If no DOI
+#   accessed: "YYYY-MM-DD"  # For websites
+#   
+#   confidence: foundational | peer_reviewed | industry_authoritative | 
+#               industry_report | government | preprint | news | author_derived
+#   
+#   notes:                  # Optional context

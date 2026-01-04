@@ -1,0 +1,349 @@
+# Facet Definitions
+# This file defines all valid facets and their values.
+# It serves as both schema (for validation) and documentation.
+
+ultimate_source:
+  name: Ultimate Energy Source
+  description: The fundamental origin of the energy being harvested
+  values:
+    solar:
+      name: Solar-derived
+      description: >
+        Energy originating from nuclear fusion in the Sun, whether captured
+        directly as radiation or indirectly via atmospheric/hydrospheric processes
+      examples:
+        - Photovoltaics (direct)
+        - Wind (indirect, via atmospheric heating)
+        - Hydro (indirect, via evaporation/precipitation)
+    gravitational:
+      name: Gravitational (Earth-Moon-Sun)
+      description: >
+        Energy from gravitational interactions in the Earth-Moon-Sun system,
+        primarily manifest as tides. Ultimately draws on Earth's rotational energy.
+      examples:
+        - Tidal barrage
+        - Tidal stream
+    nuclear:
+      name: Nuclear binding energy
+      description: >
+        Energy released by changes in nuclear configuration, moving toward
+        the minimum of the binding energy curve (iron-56)
+      examples:
+        - Fission
+        - Fusion
+        - RTGs (radioactive decay)
+    primordial:
+      name: Primordial heat + radioactive decay
+      description: >
+        Earth's internal heat, originating from planetary formation and
+        ongoing radioactive decay in the mantle and crust
+      examples:
+        - Geothermal (hydrothermal, EGS, deep)
+    chemical:
+      name: Chemical potential
+      description: >
+        Energy stored in chemical bonds or concentration gradients
+      examples:
+        - Biomass/biofuels
+        - Osmotic power (salinity gradient)
+    ambient_thermal:
+      name: Ambient thermal gradients
+      description: >
+        Low-grade thermal gradients in the environment, often a mix of
+        solar heating and other sources
+      examples:
+        - Heat pumps
+        - OTEC
+
+conversion_pathway:
+  name: Conversion Pathway
+  description: How the captured energy is converted to useful form (typically electricity)
+  values:
+    direct_electrical:
+      name: Direct electrical conversion
+      description: >
+        Energy is converted directly to electricity without thermal or
+        mechanical intermediates. Typically involves quantum processes
+        in semiconductors or electrochemical reactions.
+      examples:
+        - Photovoltaics
+        - Thermoelectrics
+        - Fuel cells
+      key_characteristic: Not subject to Carnot limits (but has other limits)
+    thermal_intermediate:
+      name: Thermal intermediate (heat engine)
+      description: >
+        Energy is first converted to heat, then to mechanical work via
+        a heat engine cycle (Rankine, Brayton, Stirling, etc.), then to electricity
+      examples:
+        - Concentrated solar thermal
+        - Geothermal
+        - Nuclear (conventional)
+        - OTEC
+      key_characteristic: Subject to Carnot efficiency limits
+    mechanical_intermediate:
+      name: Mechanical intermediate
+      description: >
+        Energy is captured as mechanical motion (rotation, oscillation)
+        and converted to electricity via electromagnetic induction
+      examples:
+        - Wind turbines
+        - Hydroelectric
+        - Tidal stream
+        - Wave energy
+      key_characteristic: Subject to Betz limit for fluid kinetic energy
+    chemical_intermediate:
+      name: Chemical intermediate
+      description: >
+        Energy is stored in chemical bonds before conversion to electricity
+        or heat
+      examples:
+        - Biomass combustion
+        - Biofuels
+        - Hydrogen (as carrier)
+
+theoretical_limit:
+  name: Theoretical Efficiency Limit
+  description: The fundamental physical constraint on conversion efficiency
+  values:
+    carnot:
+      name: Carnot limit
+      description: >
+        Maximum efficiency of any heat engine operating between hot (T_h)
+        and cold (T_c) reservoirs: η = 1 - T_c/T_h
+      formula: \eta_{\text{Carnot}} = 1 - \frac{T_c}{T_h}
+      concept_page: /concepts/carnot-limit
+      applies_to:
+        - All thermal power cycles
+        - Any process converting heat to work
+    betz:
+      name: Betz limit
+      description: >
+        Maximum extraction of kinetic energy from an open fluid flow: 59.3%
+        Arises because extracting all energy would stop the flow entirely.
+      formula: C_p^{\text{max}} = \frac{16}{27} \approx 0.593
+      concept_page: /concepts/betz-limit
+      applies_to:
+        - Wind turbines
+        - Tidal stream turbines
+        - Any unshrouded rotor in open flow
+    shockley_queisser:
+      name: Shockley-Queisser limit
+      description: >
+        Maximum efficiency of a single-junction photovoltaic cell under
+        unconcentrated sunlight: ~33% (bandgap-dependent)
+      formula: \eta_{\text{SQ}} \approx 33\%
+      concept_page: /concepts/shockley-queisser-limit
+      applies_to:
+        - Single-junction solar cells
+      notes: Can be exceeded with multi-junction cells, concentration, or exotic concepts
+    landsberg:
+      name: Landsberg limit
+      description: >
+        Maximum efficiency for converting radiation to work without concentration: ~86%
+        More restrictive than Carnot because radiation carries entropy.
+      formula: \eta_{\text{Landsberg}} \approx 0.86
+      concept_page: /concepts/landsberg-limit
+      applies_to:
+        - Theoretical upper bound for any solar conversion
+    other:
+      name: Other/technology-specific
+      description: >
+        Limit specific to the technology that doesn't fit standard categories
+      examples:
+        - Piezoelectric coupling coefficients
+        - Thermoelectric ZT figure of merit
+
+temporal_character:
+  name: Temporal Character
+  description: How output varies over time and how predictable it is
+  values:
+    diurnal_cyclic:
+      name: Diurnal cyclic
+      description: >
+        Output follows day/night cycle. Zero or near-zero at night,
+        peaks around midday. Highly predictable but unavoidable.
+      examples:
+        - Solar PV
+        - Concentrated solar thermal (without storage)
+      predictability: Very high
+      storage_need: Daily cycling required for high penetration
+    weather_driven:
+      name: Weather-driven variable
+      description: >
+        Output varies with weather conditions (wind speed, cloud cover).
+        Partially predictable via forecasting, benefits from geographic aggregation.
+      examples:
+        - Wind
+        - Solar (short-term)
+      predictability: Moderate (hours to days via forecasting)
+      storage_need: Requires flexible backup or storage
+    seasonal:
+      name: Seasonally variable
+      description: >
+        Significant variation between seasons, particularly at high latitudes.
+        Creates long-duration storage challenge.
+      examples:
+        - Solar at high latitudes
+        - Hydro (snowmelt-dependent)
+      predictability: High (seasonal patterns are consistent)
+      storage_need: Seasonal storage or complementary sources
+    predictable_cyclic:
+      name: Predictable cyclic (non-diurnal)
+      description: >
+        Output varies cyclically but predictably, following patterns other
+        than the day/night cycle (e.g., tidal cycles).
+      examples:
+        - Tidal (follows lunar cycle)
+      predictability: Very high (predictable years in advance)
+      storage_need: Short-duration smoothing
+    dispatchable:
+      name: Dispatchable
+      description: >
+        Output can be varied on demand within operational constraints.
+        Can respond to grid needs.
+      examples:
+        - Hydro with reservoir
+        - Geothermal
+        - Biomass
+      predictability: N/A (operator-controlled)
+      storage_need: None (is itself a form of storage/flexibility)
+    baseload:
+      name: Baseload (inflexible)
+      description: >
+        Designed to run at constant output. Can be turned off but not
+        easily varied. Often has high capital cost and low marginal cost.
+      examples:
+        - Nuclear (conventional)
+      predictability: N/A (operator-controlled, but inflexible)
+      storage_need: May need complementary flexible generation
+
+geographic_constraint:
+  name: Geographic Constraint
+  description: Where the technology can be effectively deployed
+  values:
+    global:
+      name: Global (minimal constraint)
+      description: >
+        Can be deployed almost anywhere with reasonable effectiveness.
+        Resource quality varies but is adequate in most locations.
+      examples:
+        - Solar PV
+        - Wind (onshore)
+      variation: ~3x between best and worst locations
+    coastal:
+      name: Coastal/marine
+      description: >
+        Requires proximity to ocean or specific marine conditions.
+        Limited to fraction of global geography.
+      examples:
+        - Offshore wind
+        - Wave energy
+        - Tidal
+        - OTEC
+    geological:
+      name: Geologically constrained
+      description: >
+        Requires specific geological conditions (heat gradient, suitable rock,
+        water availability, elevation difference).
+      examples:
+        - Geothermal (conventional)
+        - Hydro
+      characteristic: Often site-limited; best sites developed first
+    latitude_dependent:
+      name: Latitude-dependent
+      description: >
+        Effectiveness varies strongly with latitude due to solar angle
+        and day length variation.
+      examples:
+        - Solar (seasonal variation)
+        - Solar thermal (concentration requires direct beam)
+    river_dependent:
+      name: River/water-dependent
+      description: >
+        Requires rivers or water bodies with suitable characteristics
+      examples:
+        - Run-of-river hydro
+        - Reservoir hydro
+
+scale_regime:
+  name: Scale Regime
+  description: What sizes are technically and economically viable
+  values:
+    arbitrarily_modular:
+      name: Arbitrarily modular
+      description: >
+        Can be deployed at almost any scale with similar efficiency.
+        No minimum viable size; scales linearly.
+      examples:
+        - Solar PV (milliwatts to gigawatts)
+        - Battery storage
+      advantages:
+        - Incremental deployment
+        - Matches capital availability
+        - Low project risk
+    threshold_scale:
+      name: Threshold scale
+      description: >
+        Requires minimum scale for economic viability. Often has
+        economies of scale up to some point.
+      examples:
+        - Nuclear (typically >300 MW)
+        - Large hydro
+        - Offshore wind
+      characteristics:
+        - Higher upfront capital
+        - Longer development timelines
+        - Project risk concentration
+    site_limited:
+      name: Site-limited
+      description: >
+        Maximum scale determined by site characteristics rather than
+        technology limits. Total deployable capacity is constrained.
+      examples:
+        - Tidal (limited suitable sites)
+        - Geothermal (limited hot spots)
+        - Hydro (limited suitable rivers)
+
+material_criticality:
+  name: Material Criticality
+  description: Whether material availability could constrain deployment at scale
+  values:
+    abundant:
+      name: Abundant materials
+      description: >
+        Primary materials are geologically abundant and supply chains
+        are diverse or could be developed.
+      examples:
+        - Silicon PV
+        - Concrete (hydro, wind foundations)
+        - Steel (wind towers)
+    critical_minerals:
+      name: Critical minerals dependency
+      description: >
+        Requires materials that are scarce, have concentrated supply chains,
+        or have competing demands.
+      examples:
+        - Rare earth magnets (direct-drive wind)
+        - Tellurium (CdTe solar)
+        - Lithium, cobalt (batteries)
+      risks:
+        - Supply chain disruption
+        - Price volatility
+        - Geopolitical constraints
+    fuel_dependent:
+      name: Fuel-dependent
+      description: >
+        Requires ongoing fuel supply (even if fuel is abundant)
+      examples:
+        - Nuclear (uranium)
+        - Biomass
+        - Hydrogen (as produced fuel)
+    variant_dependent:
+      name: Variant-dependent
+      description: >
+        Material criticality depends on technology variant.
+        Some variants use abundant materials, others require critical minerals.
+      examples:
+        - Solar PV (Si abundant, CdTe constrained)
+        - Wind (geared vs direct-drive)

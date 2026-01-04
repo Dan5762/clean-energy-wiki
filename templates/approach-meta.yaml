@@ -1,0 +1,101 @@
+# Technology Metadata Template
+# Copy this file to /content/approaches/your-technology/meta.yaml
+# and fill in the values.
+
+# =============================================================================
+# IDENTITY (required)
+# =============================================================================
+
+id: your-technology-id          # Lowercase, hyphens for spaces
+name: Your Technology Name      # Human-readable name
+short_description: >
+  One sentence describing what this technology does and how.
+
+# =============================================================================
+# FACETS (required)
+# =============================================================================
+# These determine how the technology appears in navigation and comparison views.
+# See /content/facets.yaml for valid values and descriptions.
+
+facets:
+  ultimate_source:        # solar | gravitational | nuclear | primordial | chemical | ambient_thermal
+  conversion_pathway:     # direct_electrical | thermal_intermediate | mechanical_intermediate | chemical_intermediate
+  theoretical_limit:      # carnot | betz | shockley_queisser | landsberg | other
+  temporal_character:     # diurnal_cyclic | weather_driven | seasonal | predictable_cyclic | dispatchable | baseload
+  geographic_constraint:  # global | coastal | geological | latitude_dependent | river_dependent
+  scale_regime:           # arbitrarily_modular | threshold_scale | site_limited
+  material_criticality:   # abundant | critical_minerals | fuel_dependent | variant_dependent
+
+# =============================================================================
+# COMPARISON DATA (fill in what you can)
+# =============================================================================
+# This data populates comparison tables. Use consistent units.
+# Leave fields blank if data is unavailable or not applicable.
+
+comparison_data:
+  
+  # Theoretical limit details
+  theoretical_limit:
+    name:                   # Name of the specific limit (e.g., "Carnot", "Betz")
+    value_percent:          # The theoretical maximum efficiency (number)
+    achieved_percent:       # Best achieved in practice (number)
+    applies_to:             # Conditions for this limit (e.g., "unconcentrated sunlight")
+    
+    # For technologies with multiple variants (optional)
+    # variants:
+    #   - name: Variant A
+    #     limit_percent: 
+    #     achieved_percent: 
+    #   - name: Variant B
+    #     limit_percent: 
+    #     achieved_percent: 
+
+  # Power density
+  # Be explicit about what area means (land area, swept area, collector area, etc.)
+  power_density:
+    peak_w_per_m2:          # Maximum instantaneous power per unit area
+    average_w_per_m2:       # Time-averaged power per unit area
+    delivered_w_per_m2:     # After all system losses, per land/sea area used
+    notes:                  # Clarify what area measurement refers to
+
+  # Current deployment status
+  current_status:
+    trl:                    # Technology Readiness Level, 1-9
+    lcoe_range_usd_mwh:     # [min, max] in USD per MWh
+    global_capacity_gw:     # Total installed capacity
+    annual_growth_percent:  # Recent annual growth rate
+
+  # Temporal characteristics
+  temporal:
+    diurnal: false          # Does output follow day/night cycle?
+    seasonal_variation:     # none | moderate | high_latitude_affected
+    predictability:         # high | moderate | low
+    dispatchable: false     # Can output be controlled on demand?
+
+  # Energy density (for technologies involving fuels or storage)
+  # energy_density:
+  #   gravimetric_wh_per_kg: 
+  #   volumetric_wh_per_l: 
+
+# =============================================================================
+# RELATIONSHIPS (optional)
+# =============================================================================
+# Explicit connections to other technologies or concepts.
+# The relationship field describes how they're related.
+
+related:
+  # - id: other-technology-id
+  #   relationship: shares_theoretical_limit | alternative_approach | enabling_technology | variant | competes_for_sites
+  # - id: concept-id
+  #   relationship: governed_by
+
+# =============================================================================
+# KEY EQUATIONS (optional)
+# =============================================================================
+# Equations referenced in the content. Enables cross-referencing when the same
+# equation appears in multiple articles.
+
+equations:
+  # - id: equation_identifier      # Unique ID for this equation
+  #   latex: E = mc^2              # LaTeX markup
+  #   description: Mass-energy equivalence
