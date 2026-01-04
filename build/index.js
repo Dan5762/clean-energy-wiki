@@ -61,6 +61,16 @@ async function build() {
   );
   console.log('  ✓ Data files');
 
+  // Copy CNAME file for custom domain
+  const cnameSource = path.join(rootDir, 'CNAME');
+  const cnameDest = path.join(distDir, 'CNAME');
+  try {
+    await fs.copyFile(cnameSource, cnameDest);
+    console.log('  ✓ CNAME');
+  } catch (err) {
+    // CNAME file is optional
+  }
+
   // Summary
   console.log('\n✅ Build complete!\n');
   console.log(`   ${stats.approaches} approach pages`);
