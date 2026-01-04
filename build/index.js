@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { loadContent } from './load-content.js';
 import { renderPages } from './render-pages.js';
 import { generateComparisonData, generateFacetIndex, generateSearchIndex } from './generate-data.js';
+import { generateSitemap } from './generate-sitemap.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
@@ -60,6 +61,11 @@ async function build() {
     JSON.stringify(searchIndex, null, 2)
   );
   console.log('  ✓ Data files');
+
+  // Generate and write sitemap
+  const sitemap = generateSitemap(data);
+  await fs.writeFile(path.join(distDir, 'sitemap.xml'), sitemap);
+  console.log('  ✓ Sitemap');
 
   // Copy CNAME file for custom domain
   const cnameSource = path.join(rootDir, 'CNAME');
