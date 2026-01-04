@@ -1,0 +1,100 @@
+# Biomass and Biofuels Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: biomass
+name: Biomass and Biofuels
+short_description: >
+  Converts solar energy stored in organic matter via photosynthesis into heat,
+  electricity, or liquid fuels through combustion, fermentation, or thermochemical processes.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: solar
+  conversion_pathway: chemical_intermediate
+  theoretical_limit: other
+  temporal_character: dispatchable
+  geographic_constraint: global
+  scale_regime: arbitrarily_modular
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Photosynthetic efficiency limit
+    value_percent: 6
+    achieved_percent: 2
+    applies_to: Solar energy to stored chemical energy (C4 plants)
+    notes: >
+      C4 plants theoretical max ~6%, C3 plants ~4.6%. Best short-term observed:
+      4.3% (C4), 3.5% (C3). Seasonal average: 2-3% (high-yield crops), 0.5-1%
+      (typical agriculture). Compare to PV at 20%+ - photosynthesis is
+      inherently 5-10x less land-efficient than solar electricity.
+    variants:
+      - name: C3 plants (wheat, rice, soybeans)
+        limit_percent: 4.6
+        achieved_percent: 1.5
+      - name: C4 plants (corn, sugarcane, miscanthus)
+        limit_percent: 6.0
+        achieved_percent: 2.5
+      - name: Algae (theoretical)
+        limit_percent: 8
+        achieved_percent: 3
+
+  power_density:
+    peak_w_per_m2: null
+    average_w_per_m2: 0.5
+    delivered_w_per_m2: 0.3
+    notes: >
+      Energy yield: 80-200 GJ/ha/year for best crops. Power equivalent:
+      0.25-0.65 W/m² average. Compare to solar PV at 5-10 W/m².
+      Lowest power density of all renewable sources.
+
+  current_status:
+    trl: 9
+    lcoe_range_usd_mwh: [50, 150]
+    global_capacity_gw: 158
+    annual_growth_percent: 4
+    notes: >
+      Biopower: 158 GW, ~700 TWh/year (2.5% of global electricity).
+      Biofuels: 175 billion liters/year (~4% of transport fuel).
+      LCOE $50-150/MWh for biopower. Ethanol $0.60-1.50/gallon.
+      Traditional biomass ~25 EJ/year (declining share).
+
+  temporal:
+    diurnal: false
+    seasonal_variation: none
+    predictability: high
+    dispatchable: true
+    notes: >
+      Biomass can be stored and combusted on demand. Fully dispatchable
+      like fossil fuels. Seasonal harvest but year-round availability
+      with storage. Biogas production continuous from waste streams.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: photovoltaics
+    relationship: competes_for_land
+  - id: sustainable-aviation-fuel
+    relationship: variant
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: photosynthesis
+    latex: 6CO_2 + 6H_2O + \text{light} \rightarrow C_6H_{12}O_6 + 6O_2
+    description: Net photosynthesis reaction producing glucose from CO2 and water

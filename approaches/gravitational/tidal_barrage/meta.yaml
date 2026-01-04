@@ -1,0 +1,95 @@
+# Tidal Barrage Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: tidal-barrage
+name: Tidal Barrage
+short_description: >
+  Captures gravitational potential energy from the vertical displacement of
+  water caused by tides using a dam-like structure with low-head turbines.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: gravitational
+  conversion_pathway: mechanical_intermediate
+  theoretical_limit: other
+  temporal_character: predictable_cyclic
+  geographic_constraint: coastal
+  scale_regime: threshold_scale
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Gravitational potential extraction
+    value_percent: 35
+    achieved_percent: 28
+    applies_to: Available potential energy per tidal cycle
+    notes: >
+      Theoretical max ~35% of potential energy (E = ½ρgAR²) due to minimum
+      head requirements and cycle timing. Turbine efficiency 85-93% at design
+      point. Overall water-to-wire efficiency 70-85%. Capacity factors 24-28%
+      due to intermittent generation windows.
+
+  power_density:
+    peak_w_per_m2: null
+    average_w_per_m2: null
+    delivered_w_per_m2: null
+    notes: >
+      Power scales with basin area and tidal range squared. Example: 10 km²
+      basin with 8m range yields ~50-60 MW average. La Rance (22.5 km²,
+      8m range) produces 24 MW average per km² of basin area.
+
+  current_status:
+    trl: 9
+    lcoe_range_usd_mwh: [18, 300]
+    global_capacity_gw: 0.52
+    annual_growth_percent: 0
+    notes: >
+      Only ~520 MW installed globally (La Rance 240 MW, Sihwa 254 MW, others
+      ~26 MW). Mature La Rance now at €18/MWh (capital recovered). New-build
+      estimates €150-300/MWh. No new large plants since 2011. High upfront
+      costs but 100+ year operational lifetime.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: none
+    predictability: high
+    dispatchable: false
+    notes: >
+      Tides perfectly predictable centuries in advance. Generation occurs
+      during portion of each tidal cycle (4-6 hours per tide). Spring/neap
+      variation ~20-40% in output. Cannot be dispatched on demand but output
+      is known exactly in advance.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: tidal-stream
+    relationship: alternative_approach
+  - id: hydropower
+    relationship: shares_theoretical_limit
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: tidal_potential_energy
+    latex: E = \frac{1}{2} \rho g A R^2
+    description: Theoretical energy available per tidal cycle from basin area A and range R
+
+  - id: tidal_power
+    latex: P_{max} = \frac{1}{2} \rho g A R^2 \times \frac{2}{T}
+    description: Maximum theoretical power from tidal basin (T = tidal period)

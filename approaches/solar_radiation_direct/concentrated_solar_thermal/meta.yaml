@@ -1,0 +1,109 @@
+# Concentrated Solar Thermal Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: concentrated-solar-thermal
+name: Concentrated Solar Thermal
+short_description: >
+  Uses mirrors to concentrate direct solar radiation onto a receiver, heating
+  a working fluid to drive a heat engine that generates electricity.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: solar
+  conversion_pathway: thermal_intermediate
+  theoretical_limit: carnot
+  temporal_character: diurnal_cyclic
+  geographic_constraint: latitude_dependent
+  scale_regime: threshold_scale
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Carnot limit
+    value_percent: 63
+    achieved_percent: 25
+    applies_to: Heat engine at 565°C rejecting at 35°C
+    notes: >
+      Carnot efficiency for receiver at 838K and ambient at 308K is 63%.
+      Real steam cycles achieve 40-50% of Carnot. With optical and receiver
+      losses, overall solar-to-electric efficiency is 15-25% (annual average),
+      with peak instantaneous up to 35%.
+    variants:
+      - name: Parabolic trough (400°C)
+        limit_percent: 55
+        achieved_percent: 16
+      - name: Solar tower (565°C)
+        limit_percent: 63
+        achieved_percent: 25
+      - name: Advanced tower (>700°C, future)
+        limit_percent: 70
+        achieved_percent: null
+
+  power_density:
+    peak_w_per_m2: 35
+    average_w_per_m2: 8
+    delivered_w_per_m2: 6
+    notes: >
+      Peak is per mirror area for solar tower systems. Average accounts for
+      day/night and weather. Delivered is per land area at utility scale
+      (5-10 W/m²). Land use: 2.0-3.5 ha/MW for tower systems.
+
+  current_status:
+    trl: 9
+    lcoe_range_usd_mwh: [70, 180]
+    global_capacity_gw: 6.7
+    annual_growth_percent: 8
+    notes: >
+      LCOE varies from $70-90/MWh (best projects) to $120-180/MWh (Europe).
+      6.7 GW installed globally. Spain leads at 2.3 GW. Most new projects
+      include 10-15 hours thermal storage. Declining deployment compared to PV.
+
+  temporal:
+    diurnal: true
+    seasonal_variation: high_latitude_affected
+    predictability: high
+    dispatchable: true
+    notes: >
+      Without storage: diurnal like PV. With 10-15 hours thermal storage:
+      capacity factor 50-65%, fully dispatchable. Ramp rates 3-5%/min.
+      Can provide evening/overnight power. More predictable than wind.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: photovoltaics
+    relationship: alternative_approach
+  - id: solar-heating
+    relationship: shares_theoretical_limit
+  - id: geothermal
+    relationship: shares_theoretical_limit
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: max_concentration
+    latex: C_{max} = \frac{n^2}{\sin^2(\theta_s)} \approx 46{,}000
+    description: Maximum concentration ratio for point-focus concentrator
+
+  - id: carnot_efficiency
+    latex: \eta_{Carnot} = 1 - \frac{T_C}{T_H}
+    description: Maximum efficiency of heat engine between two temperatures
+
+  - id: receiver_thermal_balance
+    latex: \alpha \cdot C \cdot G = \epsilon \sigma T_R^4 + h(T_R - T_{amb}) + Q_{useful}
+    description: Steady-state energy balance for solar receiver

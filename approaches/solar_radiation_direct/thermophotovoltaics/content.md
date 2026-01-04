@@ -4,9 +4,11 @@
 
 ### Natural Asymmetry Exploited
 
+::: facet ultimate_source
 The temperature difference between a hot emitter (1000-2500°C) and a cool photovoltaic cell (~25-80°C). Hot objects emit electromagnetic radiation with a spectrum determined by their temperature according to Planck's law. A thermophotovoltaic (TPV) cell absorbs this thermal radiation and converts it to electricity via the photovoltaic effect, exactly as a solar cell converts sunlight.
 
 The key insight is that thermal radiation is fundamentally the same phenomenon as sunlight: both are electromagnetic radiation that can excite electrons across a semiconductor bandgap. The difference is spectral: the Sun at 5800K emits primarily in the visible range (peak ~500nm), while practical thermal emitters at 1000-2400°C emit primarily in the near-infrared (peak ~1-3 μm). This shifts the optimal bandgap for TPV cells to lower energies (0.4-1.1 eV) compared to solar cells (1.1-1.4 eV).
+:::
 
 ### Ultimate Source
 
@@ -24,13 +26,17 @@ The application driving current development is thermal batteries for grid-scale 
 
 **Planck's law for thermal emission:**
 
+::: equation planck_law
 A blackbody at temperature T emits spectral radiance:
 
 $$B(\lambda, T) = \frac{2hc^2}{\lambda^5} \cdot \frac{1}{e^{hc/\lambda k_B T} - 1}$$
+:::
 
+::: equation wien_displacement
 The peak wavelength follows Wien's displacement law:
 
 $$\lambda_{peak} = \frac{2898 \text{ μm·K}}{T}$$
+:::
 
 For emitter temperatures relevant to TPV:
 - 1000°C (1273K): λ_peak ≈ 2.3 μm
@@ -42,7 +48,9 @@ Higher emitter temperatures shift the spectrum toward shorter wavelengths, enabl
 
 **Stefan-Boltzmann law for total radiated power:**
 
+::: equation stefan_boltzmann
 $$P = \sigma T^4$$
+:::
 
 where σ = 5.67 × 10⁻⁸ W/m²K⁴. The "fourth power" in the company name Fourth Power refers to this relationship: radiated power increases dramatically with temperature, enabling high power densities from compact emitters.
 
@@ -62,15 +70,19 @@ A critical efficiency enhancement unique to TPV. Photons with energy below the b
 
 Air-bridge cell designs achieve near-unity reflectance by incorporating a thin air gap between the active semiconductor and a gold mirror, exploiting the refractive index contrast to enhance reflection.
 
+---
+
 ## Conversion Mechanism
 
 ### Energy Capture and Conversion
 
+::: facet conversion_pathway
 TPV converts thermal radiation directly to electricity with no moving parts, no working fluid, and no intermediate mechanical stage. It is a solid-state heat engine. The conversion chain is:
 
 $$\text{Heat} \rightarrow \text{Thermal radiation} \rightarrow \text{Photon absorption} \rightarrow \text{Electron-hole pairs} \rightarrow \text{DC electricity}$$
 
 This solid-state nature offers significant advantages over turbines and other mechanical heat engines: no moving parts to wear, no fluids to manage, silent operation, rapid response, and potential for very high operating temperatures unconstrained by material fatigue limits.
+:::
 
 ### Physical Processes
 
@@ -125,10 +137,13 @@ This recycling is the key to high TPV efficiency. Without it, more than half of 
 - Enhanced photon recycling
 - More complex fabrication but dramatically improved efficiency
 
+---
+
 ## Theoretical Limits
 
 ### Primary Efficiency Limit
 
+::: facet theoretical_limit
 The theoretical efficiency of TPV conversion depends on emitter temperature, cell bandgap, and the degree of spectral control:
 
 **Single-junction, blackbody emitter, no photon recycling:**
@@ -150,6 +165,7 @@ The theoretical efficiency of TPV conversion depends on emitter temperature, cel
 - Multiple bandgaps capture spectrum more efficiently
 - Theoretical limit >50% with practical designs
 - Ultimate thermodynamic limit approaches ~85% with infinite junctions
+:::
 
 ### Origin of the Limit
 
@@ -190,10 +206,13 @@ The efficiency-maximising conditions involve trade-offs:
 - 95% vs 99% reflectance can mean ~10% absolute efficiency difference
 - Air-bridge designs achieve 97-99%
 
+---
+
 ## Practical Limitations
 
 ### Material Constraints
 
+::: limitation material_scarcity
 **TPV cell materials:**
 
 TPV requires narrow-bandgap semiconductors with high-quality p-n junctions. The dominant materials are III-V compounds:
@@ -209,6 +228,7 @@ TPV requires narrow-bandgap semiconductors with high-quality p-n junctions. The 
 Silicon (E_g = 1.1 eV) can work with very high temperature emitters (>2200°C) but requires materials that are stable at such extreme temperatures.
 
 These III-V materials are grown by molecular beam epitaxy (MBE) or metal-organic chemical vapour deposition (MOCVD), which are expensive batch processes. Manufacturing cost is a primary barrier to deployment.
+:::
 
 **Emitter materials:**
 
@@ -234,6 +254,7 @@ Thermal losses determine storage efficiency. State-of-the-art designs lose ~1% o
 
 ### Manufacturing Constraints
 
+::: limitation manufacturing_complexity
 III-V TPV cell fabrication uses the same epitaxial growth techniques as multi-junction solar cells and high-performance LEDs. These processes are:
 
 - Capital-intensive (MOCVD reactors cost $1-10M each)
@@ -242,6 +263,7 @@ III-V TPV cell fabrication uses the same epitaxial growth techniques as multi-ju
 - Have significant yield losses
 
 As of 2024, Antora Energy operates the world's first dedicated TPV manufacturing line with 2 MW/year capacity. Scaling to GW-scale production will require substantial investment and manufacturing learning curves similar to those that drove down solar PV costs.
+:::
 
 ### Thermal Management
 
@@ -266,11 +288,15 @@ Complete TPV systems require:
 
 The system complexity is substantial but involves no moving parts in the core power conversion, which is the key advantage over turbines.
 
+---
+
 ## Scaling Characteristics
 
 ### Output Scaling Behaviour
 
+::: facet scale_regime
 TPV power output scales with cell area. Like photovoltaics, this is essentially linear: twice the cell area produces twice the power (given adequate emitter area and thermal management).
+:::
 
 Power density depends on:
 - Emitter temperature (P ∝ T⁴)
@@ -315,6 +341,8 @@ Target economics for thermal batteries:
 - Storage cost: <$25/kWh (vs ~$150-300/kWh for lithium-ion)
 - Round-trip efficiency: ~50% (lower than Li-ion's ~85%, but cost advantage compensates)
 - Duration: 10-500 hours (far beyond Li-ion's economic range)
+
+---
 
 ## Current Status
 
@@ -387,6 +415,7 @@ The jump from ~32% to >40% represents a fundamental breakthrough enabling therma
 
 ### Potential Impact
 
+::: facet temporal_character
 If thermal battery + TPV systems achieve their cost targets (<$25/kWh, >40% round-trip efficiency), they could address critical gaps in the clean energy transition:
 
 **Long-duration storage:**
@@ -405,5 +434,6 @@ If thermal battery + TPV systems achieve their cost targets (<$25/kWh, >40% roun
 - Fast response (seconds)
 - No geographic constraints (unlike pumped hydro)
 - Uses abundant, non-toxic materials (graphite, tin)
+:::
 
 The combination of TPV and thermal storage represents one of the most significant recent developments in energy technology, potentially unlocking both long-duration grid storage and industrial heat decarbonisation with a single system architecture.

@@ -1,0 +1,90 @@
+# OTEC Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: otec
+name: Ocean Thermal Energy Conversion (OTEC)
+short_description: >
+  Exploits the temperature difference between warm tropical surface seawater
+  and cold deep seawater to drive a heat engine for electricity generation.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: solar
+  conversion_pathway: thermal_intermediate
+  theoretical_limit: carnot
+  temporal_character: dispatchable
+  geographic_constraint: coastal
+  scale_regime: threshold_scale
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Carnot limit
+    value_percent: 8
+    achieved_percent: 5
+    applies_to: Heat engine with ΔT = 24°C
+    notes: >
+      Carnot efficiency for T_H = 301K, T_C = 277K is ~8%. Fundamentally
+      constrained by small temperature difference. Best demonstrated net
+      efficiency ~3%. Theoretical optimised designs ~5.4%. Practical
+      ceiling ~6% (half of Carnot). Low efficiency offset by free "fuel".
+
+  power_density:
+    peak_w_per_m2: null
+    average_w_per_m2: null
+    delivered_w_per_m2: null
+    notes: >
+      Power density not meaningful for OTEC (ocean thermal gradient not
+      area-limited). Resource measured by ΔT and water flow capacity.
+      A 100 MW plant pumps ~12 million gallons/minute combined water.
+
+  current_status:
+    trl: 7
+    lcoe_range_usd_mwh: [200, 500]
+    global_capacity_gw: 0.001
+    annual_growth_percent: null
+    notes: >
+      <1 MW total installed globally. Largest: Makai 105 kW (Hawaii).
+      Current LCOE $200-500/MWh. Projected mature LCOE $90-180/MWh.
+      High capital cost ($8,000-25,000/kW currently). 90-95% capacity
+      factor is key advantage. Co-products (water, cooling) improve economics.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: none
+    predictability: high
+    dispatchable: true
+    notes: >
+      Thermal gradient varies only ~20% seasonally (vs 200-400% for solar/wind).
+      24/7, 365-day availability. 90-95% capacity factor achievable. Baseload
+      renewable power. El Niño/La Niña can cause larger variations in Pacific.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: concentrated-solar-thermal
+    relationship: shares_theoretical_limit
+  - id: geothermal
+    relationship: shares_theoretical_limit
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: carnot_otec
+    latex: \eta_{Carnot} = \frac{T_H - T_C}{T_H} = \frac{\Delta T}{T_H}
+    description: Maximum efficiency of OTEC heat engine

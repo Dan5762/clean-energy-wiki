@@ -1,0 +1,105 @@
+# Thermophotovoltaics Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: thermophotovoltaics
+name: Thermophotovoltaics
+short_description: >
+  Converts thermal radiation from a hot emitter (1000-2500°C) to electricity
+  using narrow-bandgap photovoltaic cells with photon recycling.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: solar
+  conversion_pathway: direct_electrical
+  theoretical_limit: shockley_queisser
+  temporal_character: dispatchable
+  geographic_constraint: global
+  scale_regime: arbitrarily_modular
+  material_criticality: variant_dependent
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Shockley-Queisser analog for thermal spectra
+    value_percent: 55
+    achieved_percent: 44
+    applies_to: Single-junction with perfect photon recycling at 2000°C
+    notes: >
+      With photon recycling, sub-bandgap photons returned to emitter.
+      Single-junction limit ~50-55%. Best demonstrated: 44% (Michigan 2024).
+      Multi-junction with concentration can theoretically reach ~85%.
+    variants:
+      - name: Single-junction air-bridge
+        limit_percent: 55
+        achieved_percent: 44
+      - name: Tandem III-V
+        limit_percent: 60
+        achieved_percent: 41
+
+  power_density:
+    peak_w_per_m2: 1000000
+    average_w_per_m2: null
+    delivered_w_per_m2: null
+    notes: >
+      Emitter at 2000°C radiates ~1.5 MW/m² (Stefan-Boltzmann T⁴ law).
+      At 40% efficiency, ~600 kW/m² cell area. Extremely compact - 1 MW
+      from ~20 m² array. Power density 1000x higher than solar PV.
+
+  current_status:
+    trl: 7
+    lcoe_range_usd_mwh: null
+    global_capacity_gw: 0.002
+    annual_growth_percent: null
+    notes: >
+      First commercial TPV manufacturing (Antora Energy, 2 MW/year capacity).
+      First commercial-scale thermal battery demonstrated 2024. Target storage
+      cost <$25/kWh with >40% round-trip efficiency. Still early commercial
+      stage; no LCOE data yet. Primary application: thermal batteries for
+      long-duration storage and industrial heat.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: none
+    predictability: high
+    dispatchable: true
+    notes: >
+      Converts stored thermal energy to electricity on demand. Fast response
+      (seconds). No geographic constraints. When paired with thermal battery:
+      can provide 10-500 hours of storage duration, dispatchable power.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: photovoltaics
+    relationship: shares_theoretical_limit
+  - id: concentrated-solar-thermal
+    relationship: alternative_approach
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: planck_law
+    latex: B(\lambda, T) = \frac{2hc^2}{\lambda^5} \cdot \frac{1}{e^{hc/\lambda k_B T} - 1}
+    description: Spectral radiance of blackbody at temperature T
+
+  - id: stefan_boltzmann
+    latex: P = \sigma T^4
+    description: Total power radiated per unit area (fourth power law)
+
+  - id: wien_displacement
+    latex: \lambda_{peak} = \frac{2898 \text{ μm·K}}{T}
+    description: Wavelength of peak thermal emission

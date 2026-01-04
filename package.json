@@ -1,0 +1,27 @@
+{
+  "name": "clean-energy-wiki",
+  "version": "1.0.0",
+  "description": "Clean Energy from First Principles - A wiki examining clean energy technologies through physics fundamentals",
+  "type": "module",
+  "scripts": {
+    "build": "node build/index.js",
+    "dev": "node build/dev.js",
+    "validate": "node build/validate.js",
+    "preview": "npx serve dist"
+  },
+  "keywords": [
+    "clean-energy",
+    "wiki",
+    "physics",
+    "renewable-energy"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "yaml": "^2.3.4",
+    "marked": "^11.1.0",
+    "katex": "^0.16.9"
+  },
+  "devDependencies": {
+    "chokidar": "^3.5.3"
+  }
+}

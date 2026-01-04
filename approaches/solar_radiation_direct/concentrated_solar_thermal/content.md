@@ -4,17 +4,21 @@
 
 ### Natural Asymmetry Exploited
 
+::: facet ultimate_source
 The temperature difference between the Sun's surface (~5800K) and the Earth (~300K), identical to photovoltaics but exploited through a different mechanism. Concentrated solar thermal (CST) systems use optical concentration to create a localised region of high temperature, then extract work via a heat engine operating across the resulting temperature gradient.
 
 The key physical quantity out of equilibrium is the directional flux of solar radiation. Unlike the isotropic thermal radiation environment at 300K, sunlight arrives from a narrow solid angle (the solar disc subtends ~0.5° as seen from Earth, corresponding to a solid angle of ~6.8 × 10⁻⁵ steradians). This directionality enables optical concentration: mirrors or lenses can redirect radiation from a large collection area onto a small absorber, achieving flux densities far exceeding the ~1000 W/m² available at the Earth's surface.
+:::
 
 ### Ultimate Source
 
+::: facet ultimate_source
 Nuclear fusion in the Sun's core, as with photovoltaics. The fusion of hydrogen into helium releases binding energy, which thermalises through the solar interior and radiates from the photosphere. At Earth's orbital distance, this delivers the solar constant of ~1361 W/m² above the atmosphere.
 
 For CST, the relevant quantity is Direct Normal Irradiance (DNI): the component of solar radiation arriving directly from the solar disc, excluding diffuse sky radiation. CST systems cannot concentrate diffuse light (it arrives from all directions and cannot be optically redirected to a point or line). Typical DNI at good sites ranges from 2000-2800 kWh/m²/year, with instantaneous values of 800-1000 W/m² under clear skies.
 
 The source is effectively inexhaustible on human timescales. The Sun has approximately 5 billion years of hydrogen fuel remaining. Annual solar energy incident on Earth (~5.4 × 10²⁴ J) exceeds human primary energy consumption (~6 × 10²⁰ J) by a factor of ~9000.
+:::
 
 ### Key Physics
 
@@ -22,7 +26,9 @@ The source is effectively inexhaustible on human timescales. The Sun has approxi
 
 The maximum achievable concentration ratio is set by the second law of thermodynamics (or equivalently, by conservation of étendue in optics). For radiation from a source subtending solid angle Ω_s, the maximum concentration onto an absorber is:
 
+::: equation max_concentration
 $$C_{max} = \frac{n^2}{\sin^2(\theta_s)}$$
+:::
 
 where n is the refractive index of the medium (n = 1 for air) and θ_s is the half-angle subtended by the source (~0.27° for the Sun). This gives:
 
@@ -45,9 +51,11 @@ Practical systems achieve a fraction of these limits due to optical errors, trac
 
 **Heat engine thermodynamics:**
 
+::: equation carnot_efficiency
 The Carnot efficiency for a heat engine operating between hot reservoir T_H and cold reservoir T_C is:
 
 $$\eta_{Carnot} = 1 - \frac{T_C}{T_H}$$
+:::
 
 For a receiver at 565°C (838K) rejecting heat at 35°C (308K):
 
@@ -57,18 +65,23 @@ Real heat engines (Rankine steam cycles, Brayton gas turbines) achieve 40-50% of
 
 **Receiver thermal balance:**
 
-The receiver absorbs concentrated solar flux and loses heat by radiation, convection, and conduction. At steady state:
+::: equation receiver_thermal_balance
+At steady state:
 
 $$\alpha \cdot C \cdot G = \epsilon \sigma T_R^4 + h(T_R - T_{amb}) + Q_{useful}$$
+:::
 
 where α is absorptivity, C is concentration ratio, G is DNI, ε is emissivity, σ is Stefan-Boltzmann constant (5.67 × 10⁻⁸ W/m²K⁴), T_R is receiver temperature, h is convective heat transfer coefficient, and Q_useful is extracted thermal power.
 
 The quartic temperature dependence of radiative losses creates a fundamental trade-off: higher temperatures improve heat engine efficiency but increase receiver losses. An optimum operating temperature exists for each concentration ratio.
 
+---
+
 ## Conversion Mechanism
 
 ### Energy Capture and Conversion
 
+::: facet conversion_pathway
 CST systems capture solar energy as heat, then convert heat to electricity via a thermodynamic power cycle. This two-stage process distinguishes CST from photovoltaics, which convert photon energy directly to electrical work.
 
 The primary physical interactions are:
@@ -77,6 +90,7 @@ The primary physical interactions are:
 2. **Thermal absorption**: A receiver converts concentrated radiation to heat in a working fluid
 3. **Thermodynamic conversion**: A heat engine extracts mechanical work from the temperature difference between the hot working fluid and a cold sink (ambient air or cooling water)
 4. **Electrical generation**: A generator converts mechanical work to AC electricity
+:::
 
 ### Physical Processes
 
@@ -122,12 +136,14 @@ Advanced cycles under development include:
 
 **Cooling system:**
 
+::: limitation water_use
 Heat rejection to the environment is required for any heat engine. Options include:
 - Wet cooling towers: Highest efficiency, requires 2-3 m³/MWh of water
 - Dry cooling (air-cooled condensers): 5-10% efficiency penalty, minimal water use
 - Hybrid systems: Wet cooling during peak demand, dry at other times
 
 Since high-DNI regions are typically arid, water availability is a significant constraint. Most new CST plants use dry or hybrid cooling.
+:::
 
 ### Conversion Chain
 
@@ -142,10 +158,13 @@ Principal losses occur at:
 
 Overall solar-to-electric efficiency: 12-25% (annual average), with peak instantaneous efficiencies of 20-35%.
 
+---
+
 ## Theoretical Limits
 
 ### Primary Efficiency Limit
 
+::: facet theoretical_limit
 The overall efficiency of a CST system is the product of optical efficiency, receiver thermal efficiency, and power cycle efficiency:
 
 $$\eta_{total} = \eta_{optical} \times \eta_{receiver} \times \eta_{cycle}$$
@@ -153,6 +172,7 @@ $$\eta_{total} = \eta_{optical} \times \eta_{receiver} \times \eta_{cycle}$$
 The fundamental limit is ultimately thermodynamic. For a blackbody absorber at temperature T_R receiving concentrated solar flux and driving a Carnot engine rejecting heat at ambient temperature T_amb, the maximum efficiency occurs at an optimal receiver temperature that balances:
 - Receiver losses (which increase with T_R⁴)
 - Carnot efficiency (which increases with T_R)
+:::
 
 The optimal receiver temperature and corresponding maximum efficiency depend on concentration ratio. For an idealised system with perfect optics and a blackbody receiver:
 
@@ -214,6 +234,8 @@ The gap between the 95% thermodynamic limit and the 15-25% achieved by real CST 
 
 Current best commercial CST systems achieve 40-50% of their technology-specific theoretical limits.
 
+---
+
 ## Practical Limitations
 
 ### Material Constraints
@@ -233,11 +255,13 @@ The dominant molten salt formulation (60% sodium nitrate/40% potassium nitrate, 
 
 Thermal oil (synthetic hydrocarbon) is petroleum-derived and temperature-limited to ~400°C due to thermal decomposition.
 
+::: limitation manufacturing_complexity
 **Receiver materials:**
 
 High-temperature receivers require specialised alloys (Inconel, Haynes alloys) that resist creep and corrosion at elevated temperatures. These nickel-based superalloys contain chromium, cobalt, and molybdenum, which have moderate abundance but concentrated supply chains.
 
 Selective absorber coatings (for trough receivers) use ceramic-metallic composites that degrade over time at high temperatures, requiring periodic replacement.
+:::
 
 **Storage tanks:**
 
@@ -269,6 +293,7 @@ Overall plant lifetime: 25-30 years, with major component replacements (receiver
 
 ### Geographic and Resource Constraints
 
+::: facet geographic_constraint
 CST requires Direct Normal Irradiance (DNI), unlike PV which can use diffuse radiation. The threshold for economic viability is typically DNI > 2000 kWh/m²/year.
 
 **Optimal regions** (DNI > 2500 kWh/m²/year):
@@ -291,13 +316,16 @@ CST requires Direct Normal Irradiance (DNI), unlike PV which can use diffuse rad
 - Any location with frequent cloud cover or aerosol loading
 
 This geographic constraint is more severe than for PV. CST cannot operate economically in roughly 70% of inhabited regions where PV is viable.
+:::
 
+::: limitation geographic_restriction
 Additional site requirements:
 - Relatively flat terrain (slope <3% for troughs, <5% for towers)
 - Low seismic activity (for towers especially)
 - Access to water for wet cooling, or tolerance for dry cooling penalty
 - Grid connection capacity
 - Minimal dust storms and sand erosion
+:::
 
 ### Power and Energy Density
 
@@ -315,9 +343,11 @@ After optical, thermal, and conversion losses, utility-scale CST delivers:
 | Solar tower | 20-35 | 5-10 |
 | Linear Fresnel | 10-20 | 4-7 |
 
+::: limitation land_intensity
 Land-use intensity (including all plant infrastructure):
 - Parabolic trough: 2.5-3.5 ha/MW (25-35 m²/kW)
 - Solar tower: 2.0-3.0 ha/MW (20-30 m²/kW)
+:::
 
 **Energy density of thermal storage:**
 
@@ -332,6 +362,7 @@ Thermal storage is less energy-dense than batteries but far cheaper per kWh.
 
 ### Temporal Characteristics
 
+::: facet temporal_character
 CST without storage has the same diurnal and weather variability as PV. However, thermal inertia provides some smoothing: a cloud passing over causes gradual output reduction rather than the step changes seen in PV.
 
 **With thermal energy storage:**
@@ -351,6 +382,7 @@ Ramp rates are limited by thermal cycling constraints on the power block. Typica
 - Load following: 3-5%/minute (comparable to combined cycle gas)
 
 Minimum stable generation: typically 15-25% of rated capacity, limited by steam turbine turndown ratio.
+:::
 
 **Predictability:**
 
@@ -384,16 +416,20 @@ CST with storage fills a unique niche: dispatchable renewable generation.
 
 CST addresses the "duck curve" problem: In regions with high PV penetration, electricity demand peaks in the evening as PV output falls. CST with storage can shift generation from midday collection to evening dispatch, providing power precisely when PV cannot.
 
+---
+
 ## Scaling Characteristics
 
 ### Output Scaling Behaviour
 
+::: facet scale_regime
 CST exhibits economies of scale. Larger plants are more efficient and cost-effective than smaller ones due to:
 
 - Fixed costs (land preparation, grid connection, control systems) amortised over more generation
 - Larger steam turbines operate at higher efficiency than smaller ones
 - Heliostat manufacturing benefits from bulk production
 - Receiver and tower costs scale sublinearly with thermal power
+:::
 
 **Power scaling:**
 
@@ -413,10 +449,12 @@ Smaller scales are possible for process heat applications (where electricity gen
 
 No fundamental upper limit. The largest plants under construction are 700-950 MW (Dubai Noor Energy 1). Single-tower systems are limited to ~150-200 MW thermal by atmospheric attenuation; larger plants use multiple towers or very large parabolic trough fields.
 
+::: limitation long_build_time
 Practical constraints on maximum size include:
 - Grid absorption capacity at a single point
 - Capital availability (plants cost $1-3 billion)
 - Construction time (3-5 years)
+:::
 
 ### Land Requirements
 
@@ -442,6 +480,8 @@ Comparison to other sources:
 | Wind | 30,000-50,000 (total); 200-400 (direct) |
 | Nuclear | 100-400 |
 | Natural gas | 50-100 (excluding fuel extraction) |
+
+---
 
 ## Current Status
 

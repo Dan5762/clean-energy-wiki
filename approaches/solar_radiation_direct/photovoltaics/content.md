@@ -4,23 +4,31 @@
 
 ### Natural Asymmetry Exploited
 
+::: facet ultimate_source
 The temperature difference between the Sun's surface (~5800K) and the Earth (~300K). This gradient means photons arriving at the Earth carry far more energy per quantum than would be exchanged at thermal equilibrium with our environment. A photon of visible light carries ~2 eV, while thermal energy at 300K is only ~0.026 eV (kT). Photovoltaics exploit this by using photon absorption to drive electrons into excited states that would be vanishingly improbable thermally.
+:::
 
 ### Ultimate Source
 
+::: facet ultimate_source
 Nuclear fusion in the Sun's core. Hydrogen nuclei fuse to form helium, releasing energy as the system moves toward the minimum of the nuclear binding energy curve. This energy thermalises through the solar interior and radiates from the photosphere as an approximate blackbody spectrum at 5778K. At Earth's orbital distance, this delivers the solar constant of ~1361 W/m² above the atmosphere, reduced to roughly 1000 W/m² at the surface under clear skies after atmospheric absorption and scattering.
+:::
 
 ### Key Physics
 
 Photon energy is quantised:
 
+::: equation photon_energy
 $$E = h\nu = \frac{hc}{\lambda}$$
+:::
 
 where h = 6.63 × 10⁻³⁴ J·s and c = 3 × 10⁸ m/s. For a 500nm photon (green light), E ≈ 2.5 eV.
 
 The solar spectrum peaks at ~500nm, set by Wien's displacement law:
 
+::: equation wien_displacement
 $$\lambda_{\text{max}} = \frac{b}{T}$$
+:::
 
 where b = 2.898 × 10⁻³ m·K.
 
@@ -33,11 +41,15 @@ Two loss mechanisms are inherent to this process:
 
 These two losses, plus blackbody re-radiation from the cell itself, are the origin of the Shockley-Queisser limit.
 
+---
+
 ## Conversion Mechanism
 
 ### Energy Capture and Conversion
 
+::: facet conversion_pathway
 Photovoltaics convert photon energy directly to electrical work, with no intermediate thermal or mechanical stage. This is unusual among energy technologies and is why PV isn't subject to Carnot efficiency limits (though it has its own, related limits). The output is DC electricity at a voltage determined by the bandgap and operating conditions, typically 0.5-0.7V per silicon cell.
+:::
 
 ### Physical Processes
 
@@ -63,9 +75,13 @@ $$\text{Photon} \rightarrow \text{electron-hole pair} \rightarrow \text{charge s
 
 No moving parts, no working fluid, no thermal intermediate. This directness is both a strength (simplicity, low maintenance) and a constraint (the physics of the semiconductor sets hard limits on what fraction of incident energy can be extracted).
 
+---
+
 ## Theoretical Limits
 
+::: facet theoretical_limit
 For a single-junction solar cell under unconcentrated sunlight, the maximum theoretical efficiency is approximately **33%**, known as the **Shockley-Queisser limit**. This was derived by William Shockley and Hans Queisser in 1961 and arises from fundamental thermodynamic and quantum mechanical constraints, not engineering limitations.
+:::
 
 ### Origin of the Limit
 
@@ -93,21 +109,31 @@ These losses create an optimisation problem. A small bandgap captures more photo
 
 The Carnot efficiency between 5800K and 300K is:
 
+::: equation carnot_efficiency
 $$\eta_{\text{Carnot}} = 1 - \frac{T_{\text{cold}}}{T_{\text{hot}}} \approx 95\%$$
+:::
 
 The Shockley-Queisser limit is far below this because a single-junction cell is a highly constrained heat engine: it can only interact with the radiation field at one energy threshold, discarding information about photon energies above and below the bandgap. More sophisticated approaches (multi-junction cells, hot carrier extraction, spectral splitting) attempt to recover some of this lost potential.
+
+---
 
 ## Practical Limitations
 
 ### Material Constraints
 
+::: limitation manufacturing_complexity
 **Silicon:** The dominant technology. Silicon is the second most abundant element in Earth's crust, so raw material scarcity is not a concern. The constraint is manufacturing energy intensity: producing solar-grade polysilicon requires reduction of silica at ~2000°C, and the Czochralski process for monocrystalline ingots is slow and energy-intensive. Energy payback time for modern silicon PV is 1-2 years depending on location and manufacturing source.
+:::
 
+::: limitation material_scarcity
 **Thin-film alternatives:** Cadmium telluride (CdTe) and copper indium gallium selenide (CIGS) use less material but face elemental constraints. Tellurium is genuinely scarce (~1 ppm in crust, byproduct of copper refining). Indium is similarly limited. These technologies can serve niche roles but likely cannot scale to tens of TW.
+:::
 
 **Perovskites:** Use abundant elements (lead, iodine, organic cations) but currently degrade within months to years under real-world conditions. Stability under moisture, heat, and UV remains the primary barrier. Lead toxicity is a secondary concern for large-scale deployment.
 
+::: limitation material_scarcity
 **Silver:** Often overlooked. Conventional silicon cells use silver paste for contacts. At current loadings (~10-20 mg/W), scaling PV to tens of TW would consume a significant fraction of annual silver production. Copper and aluminium alternatives are being developed.
+:::
 
 ### Degradation and Lifetime
 
@@ -115,9 +141,11 @@ Silicon modules degrade at ~0.3-0.5% per year, giving 25-30 year operational lif
 
 ### Geographic and Resource Constraints
 
+::: facet geographic_constraint
 Solar resources vary roughly 3× between equatorial deserts (~2500 kWh/m²/year) and northern Europe (~800-1000 kWh/m²/year). PV works everywhere but economics differ substantially.
 
 No fuel supply chain is required, which is a major advantage. Manufacturing is concentrated in China (~80% of global module production), creating supply chain dependencies rather than resource dependencies.
+:::
 
 ### Power Density
 
@@ -129,6 +157,7 @@ This is lower than fossil fuel plants (which import energy-dense fuel) but highe
 
 ### Temporal Characteristics
 
+::: facet temporal_character
 Solar output varies on three timescales:
 
 **Diurnal:** Zero output at night. Predictable and unavoidable. Creates a daily storage requirement for high-penetration systems.
@@ -138,20 +167,27 @@ Solar output varies on three timescales:
 **Seasonal:** At high latitudes, winter output can be 10-20% of summer output. This creates the hardest storage problem: seasonal energy transfer is far more expensive than daily cycling.
 
 Solar is more predictable than wind on timescales of hours to days, but the diurnal cycle is a harder constraint since it's absolute rather than statistical.
+:::
 
 ### Dispatchability and System Role
 
+::: limitation intermittency
 Without storage, PV is non-dispatchable. It generates when the sun shines, not when demand peaks (though in many grids, daytime solar now correlates reasonably well with air conditioning load).
 
 At low grid penetration (<20%), intermittency is absorbed by existing dispatchable generation. At high penetration, storage or demand flexibility becomes essential. The cost and scalability of storage is arguably now the binding constraint on solar deployment, not PV costs themselves.
 
 Lithium-ion batteries handle daily cycling economically at current prices. Seasonal storage remains unsolved at scale; candidates include hydrogen, pumped hydro, and compressed air, but all have significant efficiency losses or geographic constraints.
+:::
+
+---
 
 ## Scaling Characteristics
 
 ### Output Scaling Behaviour
 
+::: facet scale_regime
 PV is nearly perfectly modular. Output scales linearly with area, with no minimum efficient scale. A 1 m² panel produces roughly the same energy per unit area as a 10 km² installation. This is unusual among energy technologies; most (turbines, nuclear, thermal plants) have minimum scales below which efficiency drops sharply.
+:::
 
 Minor economies of scale exist in balance-of-system components. Larger inverters are more efficient (98-99% vs 95-97% for small string inverters). Installation labour costs per watt decrease with system size. Grid connection costs are amortised over more output. But these are incremental; the core physics is scale-invariant.
 
@@ -165,6 +201,7 @@ This scale flexibility is a major practical advantage: deployment can proceed in
 
 ### Land/Resource Requirements
 
+::: limitation land_intensity
 At 5-10 W/m² average delivered output, the land requirements are:
 
 | Scale | Area Required |
@@ -178,6 +215,7 @@ For context, 600,000 km² is roughly the area of France, or 0.4% of Earth's land
 - Deserts with high irradiance and low land value are well-suited
 - Rooftop and building-integrated PV uses otherwise unproductive space (estimated 0.3-0.5 TW potential for rooftops in the US alone)
 - Agrivoltaics (co-locating PV with agriculture) shows promising results for certain crops that benefit from partial shading, though this remains early-stage
+:::
 
 ### Comparison to Other Sources
 
@@ -195,6 +233,8 @@ Fossil and nuclear plants have high on-site power density because energy arrives
 ### Variant Configurations
 
 Floating PV on reservoirs, lakes, and calm coastal waters is emerging as a way to access space without land competition. Co-benefits include reduced evaporation and cooler panel operating temperatures (improving efficiency slightly). Current deployments are small but growing, particularly in land-constrained countries like Japan, South Korea, and the Netherlands.
+
+---
 
 ## Current Status
 

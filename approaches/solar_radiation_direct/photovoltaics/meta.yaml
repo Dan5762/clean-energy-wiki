@@ -1,0 +1,112 @@
+# Photovoltaics Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: photovoltaics
+name: Photovoltaics
+short_description: >
+  Converts solar photon energy directly to electricity using semiconductor p-n
+  junctions that generate and separate electron-hole pairs.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: solar
+  conversion_pathway: direct_electrical
+  theoretical_limit: shockley_queisser
+  temporal_character: diurnal_cyclic
+  geographic_constraint: global
+  scale_regime: arbitrarily_modular
+  material_criticality: variant_dependent
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Shockley-Queisser limit
+    value_percent: 33
+    achieved_percent: 26.8
+    applies_to: Single-junction cell under unconcentrated AM1.5 sunlight
+    notes: >
+      Optimum bandgap is ~1.34 eV for 33% limit. Silicon (1.1 eV) has
+      theoretical max of ~29%. Best lab silicon cell: 26.8%. Best commercial
+      modules: 22-24%. Multi-junction cells can exceed 47% in lab.
+    variants:
+      - name: Crystalline silicon
+        limit_percent: 29
+        achieved_percent: 26.8
+      - name: Perovskite-silicon tandem
+        limit_percent: 45
+        achieved_percent: 34.6
+      - name: III-V triple junction (concentrated)
+        limit_percent: 50
+        achieved_percent: 47.6
+
+  power_density:
+    peak_w_per_m2: 200
+    average_w_per_m2: 40
+    delivered_w_per_m2: 8
+    notes: >
+      Peak assumes 1000 W/m² insolation × 20% efficiency. Average varies by
+      location (150-250 W/m² insolation). Delivered accounts for spacing,
+      inverters, and BOS losses at utility scale: 5-10 W/m² depending on location.
+
+  current_status:
+    trl: 9
+    lcoe_range_usd_mwh: [15, 60]
+    global_capacity_gw: 1500
+    annual_growth_percent: 28
+    notes: >
+      LCOE varies from $15-25/MWh (excellent sites) to $40-60/MWh (moderate
+      resource). 1.5 TW installed as of 2024, growing ~25-30%/year.
+      Generates 5-6% of global electricity.
+
+  temporal:
+    diurnal: true
+    seasonal_variation: high_latitude_affected
+    predictability: high
+    dispatchable: false
+    notes: >
+      Zero output at night (unavoidable). 10-20% of summer output in winter
+      at high latitudes. More predictable than wind on hours-to-days timescale
+      but diurnal cycle is harder constraint.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: concentrated-solar-thermal
+    relationship: alternative_approach
+  - id: perovskite-tandem
+    relationship: variant
+  - id: building-integrated-pv
+    relationship: variant
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: photon_energy
+    latex: E = h\nu = \frac{hc}{\lambda}
+    description: Energy of a photon as function of frequency or wavelength
+
+  - id: wien_displacement
+    latex: \lambda_{\text{max}} = \frac{b}{T}
+    description: Wavelength of peak blackbody emission
+
+  - id: carnot_efficiency
+    latex: \eta_{\text{Carnot}} = 1 - \frac{T_{\text{cold}}}{T_{\text{hot}}}
+    description: Maximum efficiency of heat engine between two temperatures
+
+  - id: shockley_queisser
+    latex: \eta_{\text{SQ}} \approx 33\%
+    description: Maximum efficiency of single-junction cell under AM1.5 spectrum

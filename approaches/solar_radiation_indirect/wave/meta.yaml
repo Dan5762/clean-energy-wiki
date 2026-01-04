@@ -1,0 +1,94 @@
+# Wave Energy Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: wave-energy
+name: Wave Energy
+short_description: >
+  Extracts kinetic and potential energy from ocean surface waves created by
+  wind (itself driven by solar heating) using various converter technologies.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: solar
+  conversion_pathway: mechanical_intermediate
+  theoretical_limit: other
+  temporal_character: weather_driven
+  geographic_constraint: coastal
+  scale_regime: site_limited
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: No simple universal limit
+    value_percent: null
+    achieved_percent: 35
+    applies_to: Wave-to-wire conversion
+    notes: >
+      No Betz-equivalent for wave energy due to complex physics (6 degrees
+      of freedom, polychromatic seas). Capture width ratio can exceed 100%
+      for small devices. Practical wave-to-wire efficiency: 10-35%.
+      Hydrodynamic efficiency alone: 20-80% depending on device type.
+
+  power_density:
+    peak_w_per_m2: null
+    average_w_per_m2: null
+    delivered_w_per_m2: null
+    notes: >
+      Wave power measured per metre of wave crest (kW/m), not per area.
+      Best sites: 60-100 kW/m. Good sites: 30-60 kW/m. Wave farm power
+      density: 1-5 MW/km² (lower than offshore wind at 5-10 MW/km²).
+
+  current_status:
+    trl: 6
+    lcoe_range_usd_mwh: [300, 1000]
+    global_capacity_gw: 0.003
+    annual_growth_percent: null
+    notes: >
+      ~2-3 MW total installed globally (mostly prototypes). LCOE $300-1000/MWh
+      for demonstration projects. No commercial-scale deployments yet. 15-20
+      years behind offshore wind. Multiple technology concepts still competing.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: moderate
+    predictability: moderate
+    dispatchable: false
+    notes: >
+      Wave output varies with weather systems (factor 5-10x synoptic).
+      Winter waves typically 2-3x summer in temperate regions. More
+      predictable than wind 24-48 hours ahead (waves integrate wind).
+      Capacity factors: 25-35%.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: offshore-wind
+    relationship: competes_for_sites
+  - id: tidal-stream
+    relationship: shares_theoretical_limit
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: wave_energy_density
+    latex: E = \frac{1}{16} \rho g H^2
+    description: Mean energy density per unit horizontal area in surface wave
+
+  - id: wave_power
+    latex: P \approx 0.5 \cdot H^2 \cdot T
+    description: Power per metre of wave crest (kW/m) in deep water

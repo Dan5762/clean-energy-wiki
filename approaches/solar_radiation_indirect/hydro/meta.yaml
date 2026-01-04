@@ -1,0 +1,94 @@
+# Hydropower Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: hydropower
+name: Hydropower
+short_description: >
+  Converts gravitational potential energy of elevated water to electricity
+  via turbines, with water elevated by the solar-driven hydrological cycle.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: solar
+  conversion_pathway: mechanical_intermediate
+  theoretical_limit: other
+  temporal_character: seasonal
+  geographic_constraint: river_dependent
+  scale_regime: site_limited
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Mechanical efficiency limit
+    value_percent: 100
+    achieved_percent: 93
+    applies_to: Gravitational potential energy to electricity
+    notes: >
+      No Carnot limit (mechanical, not thermal conversion). Theoretical max
+      is 100% of gravitational potential energy. Modern large plants achieve
+      80-93% system efficiency. Turbine efficiency alone reaches 93-95%.
+
+  power_density:
+    peak_w_per_m2: 500
+    average_w_per_m2: 50
+    delivered_w_per_m2: null
+    notes: >
+      Power density varies enormously: high-head alpine plants 50-500 W/m²
+      of reservoir; low-head reservoir plants 1-20 W/m². Run-of-river has
+      minimal land footprint. Not comparable to area-based renewables.
+
+  current_status:
+    trl: 9
+    lcoe_range_usd_mwh: [20, 190]
+    global_capacity_gw: 1400
+    annual_growth_percent: 2
+    notes: >
+      ~1,400 GW total (including 189 GW pumped storage). Generates 4,578 TWh/year
+      (14% of global electricity). LCOE average $57/MWh (range $20-190/MWh).
+      24.6 GW added in 2024. Mature technology with limited cost reduction potential.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: high_latitude_affected
+    predictability: high
+    dispatchable: true
+    notes: >
+      Reservoir hydro is fully dispatchable. Run-of-river follows seasonal
+      flow patterns. Pumped storage provides grid balancing services. Droughts
+      can severely curtail generation. Climate change affecting reliability.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: pumped-hydro-storage
+    relationship: variant
+  - id: run-of-river
+    relationship: variant
+  - id: tidal-range
+    relationship: shares_theoretical_limit
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: gravitational_potential
+    latex: E = mgh
+    description: Gravitational potential energy of water at elevation
+
+  - id: hydraulic_power
+    latex: P = \rho g Q H
+    description: Power available from water flow at given head

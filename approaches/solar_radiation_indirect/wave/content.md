@@ -4,7 +4,9 @@
 
 ### Natural Asymmetry Exploited
 
+::: facet ultimate_source
 Ocean waves represent a tertiary form of solar energy: the Sun heats Earth's surface unevenly, creating atmospheric pressure gradients that drive winds, which in turn transfer energy to the ocean surface through friction and pressure differentials. This energy accumulates in waves as they travel across vast ocean fetches, concentrating diffuse wind energy into a denser, more persistent form.
+:::
 
 The key insight is energy density amplification: while solar radiation delivers ~100-200 W/m² on average and wind power density is typically 300-500 W/m² at good sites, wave power can reach 30-70 kW per metre of wave crest in energetic locations. This 5-30× concentration occurs because water is ~800× denser than air, and because wave energy accumulates over hundreds or thousands of kilometres of fetch.
 
@@ -16,17 +18,21 @@ Solar radiation drives atmospheric circulation, which drives wind, which drives 
 
 **Wave energy density:**
 
+::: equation wave_energy_density
 The mean energy density per unit horizontal area in a surface gravity wave is:
 
 $$E = \frac{1}{16} \rho g H^2$$
+:::
 
 where ρ is water density (~1025 kg/m³ for seawater), g is gravitational acceleration (9.81 m/s²), and H is the significant wave height. The energy is equally partitioned between kinetic energy (water particle motion) and potential energy (surface displacement), as expected from the equipartition theorem.
 
 **Wave power (energy flux):**
 
+::: equation wave_power
 The power transmitted per unit width of wave crest in deep water is:
 
 $$P = \frac{\rho g^2}{64\pi} H_{m0}^2 T_e \approx 0.5 \cdot H^2 \cdot T \text{ [kW/m]}$$
+:::
 
 where H_{m0} is the significant wave height (metres), T_e is the energy period (seconds), and the simplified approximation gives power in kW per metre of wave front.
 
@@ -55,7 +61,9 @@ Fully developed seas (maximum wave height for given wind speed) require fetch of
 
 ### Energy Capture
 
+::: facet conversion_pathway
 Wave energy converters (WECs) extract energy from one or more of the six degrees of freedom of wave-induced motion:
+:::
 - **Heave**: Vertical up-down motion
 - **Surge**: Horizontal motion in wave direction
 - **Sway**: Horizontal motion perpendicular to wave direction
@@ -168,7 +176,9 @@ The power take-off (PTO) converts mechanical wave-induced motion to electricity:
 
 ### No Simple Betz-Equivalent Limit
 
+::: facet theoretical_limit
 Unlike wind turbines (Betz limit: 59.3%) or solar cells (Shockley-Queisser: 33%), wave energy has no single, simple theoretical efficiency limit. The physics is more complex because:
+:::
 
 1. Wave energy exists in multiple degrees of freedom simultaneously
 2. Devices can theoretically capture energy from a wave front wider than themselves
@@ -227,9 +237,11 @@ The marine environment is extraordinarily harsh: saltwater corrosion, biofouling
 
 ### Resource Variability
 
+::: facet geographic_constraint
 **Spatial distribution:**
 
 Wave power varies enormously by location:
+:::
 - Exceptional: 60-100 kW/m (Southern Ocean, exposed Atlantic coasts)
 - Good: 30-60 kW/m (Northwest Europe, Pacific coasts, southern Australia)
 - Moderate: 15-30 kW/m (Mediterranean, US East Coast)
@@ -237,6 +249,7 @@ Wave power varies enormously by location:
 
 The highest resources are at latitudes 40-60° where persistent westerly winds create long-fetch waves. However, these locations often have the harshest conditions.
 
+::: facet temporal_character
 **Temporal variation:**
 
 - Seasonal: Winter waves typically 2-3× summer waves in temperate regions
@@ -244,6 +257,7 @@ The highest resources are at latitudes 40-60° where persistent westerly winds c
 - Wave-by-wave: Factor 2-3× variation even in steady seas
 
 Capacity factors for wave energy are typically 25-35%, comparable to wind but with different temporal patterns. Wave energy is more predictable than wind 24-48 hours ahead (waves integrate wind over time and space).
+:::
 
 ### Installation and Maintenance
 
@@ -286,7 +300,9 @@ Environmental monitoring requirements add to project costs and timelines.
 
 ### Device Scaling
 
+::: facet scale_regime
 Different WEC types scale differently:
+:::
 
 **Point absorbers**: Limited scalability. Theoretical capture width is independent of device size for a given wavelength, so making devices larger does not proportionally increase power capture. Most point absorbers remain sub-MW scale (typical: 50-500 kW).
 

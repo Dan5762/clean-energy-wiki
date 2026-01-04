@@ -4,11 +4,13 @@
 
 ### Natural Asymmetry Exploited
 
+::: facet ultimate_source
 The temperature difference between the Sun's surface (~5800K) and the Earth (~300K), exploited at the low-temperature end of the thermal spectrum. Solar heating systems absorb solar radiation and convert it directly to thermal energy at temperatures suitable for domestic hot water (40-80°C), space heating (30-60°C), and low-temperature industrial processes (up to ~150°C).
 
 The physical quantity out of equilibrium is the radiative flux from the Sun. A surface at ambient temperature (~300K) would emit ~450 W/m² according to Stefan-Boltzmann, but receives ~1000 W/m² of solar irradiance at midday, creating a net energy gain that can be captured as useful heat.
 
 Unlike concentrated solar thermal (which achieves high temperatures via optical concentration for electricity generation) or photovoltaics (which extract electrical work via the photovoltaic effect), solar heating systems operate without concentration or electrical conversion. They accept the full solar spectrum and convert it to low-grade heat through straightforward absorption. This simplicity is both a strength (low cost, high reliability) and a limitation (the heat is useful only for thermal loads, not electricity).
+:::
 
 ### Ultimate Source
 
@@ -48,23 +50,29 @@ Typical values:
 
 **Hottel-Whillier-Bliss equation:**
 
+::: equation hottel_whillier_bliss
 The useful heat extracted from a solar collector is given by:
 
 $$Q_u = F_R \cdot A_c \cdot [\tau\alpha \cdot G - U_L \cdot (T_i - T_{amb})]$$
+:::
 
 where F_R is the heat removal factor (ratio of actual heat removal to maximum possible), τα is the transmittance-absorptance product of the glazing and absorber, T_i is the inlet fluid temperature, and T_amb is ambient temperature.
 
+::: equation collector_efficiency
 This can be rewritten as collector efficiency:
 
 $$\eta = \frac{Q_u}{G \cdot A_c} = F_R \cdot \tau\alpha - F_R \cdot U_L \cdot \frac{(T_i - T_{amb})}{G}$$
+:::
 
 This linear relationship (efficiency decreasing with temperature rise above ambient, normalised by irradiance) is the fundamental performance characteristic of non-concentrating solar thermal collectors.
 
 **Stagnation temperature:**
 
+::: equation stagnation_temperature
 When no heat is extracted (Q_u = 0), the collector reaches stagnation temperature:
 
 $$T_{stag} = T_{amb} + \frac{\tau\alpha \cdot G}{U_L}$$
+:::
 
 For a flat-plate collector with U_L = 4 W/m²K, τα = 0.8, and G = 1000 W/m²:
 
@@ -72,13 +80,17 @@ $$T_{stag} = T_{amb} + \frac{0.8 \times 1000}{4} = T_{amb} + 200°C$$
 
 Evacuated tubes can reach stagnation temperatures exceeding 300°C, creating overheat protection challenges.
 
+---
+
 ## Conversion Mechanism
 
 ### Energy Capture and Conversion
 
+::: facet conversion_pathway
 Solar heating systems capture solar radiation and convert it to thermal energy in a heat transfer fluid (water, water-glycol mixture, or air). This is the simplest and most direct solar energy conversion: photons are absorbed by a dark surface, their energy thermalises immediately, and the resulting heat is transferred to a working fluid.
 
 The primary physical interaction is absorption of electromagnetic radiation by the collector surface, followed by heat conduction to the fluid and convective heat transfer within the fluid.
+:::
 
 ### Physical Processes
 
@@ -156,15 +168,19 @@ Principal losses occur at:
 
 Overall system efficiency (useful heat delivered / incident solar energy) ranges from 30-60% depending on application, climate, and system design.
 
+---
+
 ## Theoretical Limits
 
 ### Primary Efficiency Limit
 
+::: facet theoretical_limit
 For a non-concentrating solar thermal collector, the maximum instantaneous efficiency approaches the optical efficiency τα when operating at ambient temperature (no thermal losses). This limit is typically 75-85% for glazed collectors.
 
 However, the useful efficiency falls as operating temperature increases. The fundamental trade-off is:
 - Higher temperatures are more useful (higher exergy content)
 - Higher temperatures incur greater thermal losses
+:::
 
 For domestic hot water at 60°C and ambient at 20°C, achievable efficiencies are:
 - Flat-plate collector: 40-60%
@@ -222,6 +238,8 @@ Compared to the alternative of using PV electricity to drive a heat pump:
 
 This comparison has shifted in favour of PV + heat pump as PV costs have fallen, though solar thermal retains advantages in specific applications.
 
+---
+
 ## Practical Limitations
 
 ### Material Constraints
@@ -274,6 +292,7 @@ Solar thermal systems have excellent reliability when properly installed. The ma
 
 ### Geographic and Resource Constraints
 
+::: facet geographic_constraint
 Solar heating is viable across a wide range of climates:
 
 **Excellent resources** (>1800 kWh/m²/year GHI):
@@ -289,6 +308,7 @@ Solar heating is viable across a wide range of climates:
 - Solar fractions of 30-50%; larger collector areas needed; seasonal storage may help
 
 Unlike CSP, solar heating collectors can use diffuse radiation, making them effective even in cloudy climates. However, seasonal mismatch is a challenge: solar availability peaks in summer when heating demand is lowest.
+:::
 
 **Site requirements:**
 - South-facing roof or ground area (northern hemisphere)
@@ -316,6 +336,7 @@ Unlike CSP, solar heating collectors can use diffuse radiation, making them effe
 
 ### Temporal Characteristics
 
+::: facet temporal_character
 **Diurnal variation:**
 - Output follows solar irradiance with thermal lag
 - Storage tanks (typically 50-100 L per m² of collector) buffer daily variations
@@ -330,6 +351,7 @@ Unlike CSP, solar heating collectors can use diffuse radiation, making them effe
 - Summer output 2-5× winter output depending on latitude
 - Space heating demand inversely correlated with solar availability
 - Seasonal storage (large water tanks, underground thermal storage) can shift summer excess to winter, but is expensive and primarily used in district heating
+:::
 
 **Predictability:**
 - Solar resource highly predictable day-ahead
@@ -361,11 +383,15 @@ Unlike CSP, solar heating collectors can use diffuse radiation, making them effe
 - Controls and pumps (for active systems)
 - Heat exchangers (for indirect systems using glycol)
 
+---
+
 ## Scaling Characteristics
 
 ### Output Scaling Behaviour
 
+::: facet scale_regime
 Solar thermal collectors are modular. Output scales linearly with area from residential (4-10 m²) to district heating (10,000-100,000 m²+). No minimum efficient scale exists; no maximum scale has been reached.
+:::
 
 Economies of scale are modest:
 - Larger collectors have slightly better edge-to-area ratios
@@ -388,6 +414,7 @@ No fundamental limit to scaling. District heating networks can aggregate multipl
 
 ### Land/Area Requirements
 
+::: limitation land_intensity
 **Rooftop systems:**
 - 4-8 m² per person for DHW
 - 10-20 m² per person for DHW + space heating
@@ -401,6 +428,9 @@ No fundamental limit to scaling. District heating networks can aggregate multipl
 **District heating scale:**
 - 100 MW_th solar field: ~200,000-300,000 m² land
 - Can co-locate with other land uses (parking lots, agricultural land, industrial sites)
+:::
+
+---
 
 ## Current Status
 

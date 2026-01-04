@@ -4,7 +4,9 @@
 
 ### Natural Asymmetry Exploited
 
+::: facet ultimate_source
 Hydropower exploits the gravitational potential energy of water elevated above a reference point. The ultimate energy source is the Sun, which drives the hydrological cycle: solar radiation evaporates water from oceans and land surfaces, atmospheric circulation transports this moisture, and precipitation deposits it at elevation. Rivers then return water to the sea, and hydropower intercepts this flow to extract mechanical work.
+:::
 
 The hydrological cycle represents approximately 23% of incoming solar radiation (roughly 40,000 TW of power globally). Of this, only a fraction appears as surface runoff suitable for hydropower. The theoretical global hydropower potential is estimated at 40,000-50,000 TWh/year, with technical potential around 16,000 TWh/year and economic potential perhaps 8,000-10,000 TWh/year.
 
@@ -12,17 +14,21 @@ The hydrological cycle represents approximately 23% of incoming solar radiation 
 
 **Gravitational potential energy:**
 
+::: equation gravitational_potential
 The energy available from water at elevation is:
 
 $$E = mgh$$
+:::
 
 where m is the mass of water (kg), g is gravitational acceleration (9.81 m/s²), and h is the vertical drop or "head" (m).
 
 **Hydraulic power:**
 
+::: equation hydraulic_power
 The theoretical power available from flowing water is:
 
 $$P = \rho g Q H$$
+:::
 
 where ρ is water density (~1000 kg/m³), Q is volumetric flow rate (m³/s), and H is the effective head (m).
 
@@ -47,7 +53,9 @@ where η is the overall system efficiency (typically 0.85-0.93 for modern instal
 
 ### Energy Capture
 
+::: facet conversion_pathway
 Water is collected either from natural river flow or from a reservoir created by a dam. The water is directed through a penstock (pressure conduit) to turbines located at a lower elevation. The potential energy converts to kinetic energy as water accelerates, then to mechanical energy as it drives turbine rotation.
+:::
 
 ### Hydropower Plant Types
 
@@ -128,9 +136,11 @@ This is far higher than thermal power plants (33-60%) and comparable to the best
 
 ### Thermodynamic Efficiency
 
+::: facet theoretical_limit
 Unlike heat engines, hydropower is not constrained by Carnot efficiency. The conversion is mechanical, not thermal, so there is no fundamental thermodynamic limit analogous to Carnot or Shockley-Queisser.
 
 The theoretical maximum is 100% conversion of gravitational potential energy to electricity. Practical limits arise from:
+:::
 
 -   Friction losses in penstocks and draft tubes
 -   Turbulence and flow separation in turbines
@@ -168,7 +178,9 @@ The power density of hydropower (W/m² of reservoir or watershed area) varies en
 
 ### Site Constraints
 
+::: facet geographic_constraint
 Hydropower requires specific geography:
+:::
 
 -   Adequate water flow (precipitation, catchment area)
 -   Suitable topography (head, dam sites, geology)
@@ -179,6 +191,7 @@ The best sites have largely been developed in mature markets (Europe, North Amer
 
 ### Hydrological Variability
 
+::: facet temporal_character
 Water availability varies across multiple timescales:
 
 -   **Seasonal**: snowmelt, monsoons, dry seasons
@@ -186,15 +199,18 @@ Water availability varies across multiple timescales:
 -   **Climate change**: shifting precipitation patterns, glacier retreat
 
 Droughts can severely curtail generation. In 2023, drought reduced global hydropower output by ~5%, demonstrating vulnerability to climate variability. Reservoir storage provides buffer but cannot fully compensate for multi-year droughts.
+:::
 
 ### Environmental and Social Impacts
 
+::: limitation public_acceptance
 **Ecological impacts**:
 
 -   River fragmentation: dams block fish migration, fragmenting populations
 -   Flow regime alteration: affects downstream ecosystems, sediment transport
 -   Thermal stratification: reservoirs develop temperature layers affecting water quality
 -   Habitat loss: reservoirs inundate terrestrial ecosystems
+:::
 
 **Greenhouse gas emissions**:
 
@@ -233,7 +249,9 @@ Modernization can increase efficiency by 5-10% and extend plant life by decades.
 
 ### Project Scale Range
 
+::: facet scale_regime
 Hydropower spans an enormous range of scales:
+:::
 
 | Category | Capacity      | Characteristics                     |
 | -------- | ------------- | ----------------------------------- |

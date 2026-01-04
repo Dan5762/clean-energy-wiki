@@ -4,32 +4,44 @@
 
 ### Solar Energy Stored in Thermal Gradients
 
+::: facet ultimate_source
 OTEC exploits the temperature difference between warm surface seawater and cold deep seawater to drive a heat engine. The ocean acts as an enormous solar collector: tropical surface waters absorb solar radiation and maintain temperatures of 24-29°C year-round, while water below 800-1000m remains at 4-6°C due to the global thermohaline circulation that brings cold polar water to tropical depths.
+:::
 
 This thermal gradient represents stored solar energy of staggering scale. On an average day, tropical seas absorb solar radiation equivalent in heat content to approximately 250 billion barrels of oil. The global theoretical potential for OTEC has been estimated at 8-30 TW, with practical potential around 3-5 TW when accounting for geographic constraints and environmental limits. This exceeds current global electricity consumption (~3 TW average) and dwarfs other ocean energy sources (wave: ~0.5 TW practical, tidal: ~0.1 TW practical).
 
 ### Geographic Distribution
 
+::: facet geographic_constraint
 The necessary thermal gradient (minimum ΔT ≈ 20°C between surface and 1000m depth) exists primarily between latitudes 20°N and 20°S. Within this tropical band:
 
 - 98 countries and territories have potential OTEC resources
 - Best resources: Caribbean, Pacific islands, Southeast Asia, East African coast, northern Australia
 - Ideal sites combine steep bathymetry (deep water close to shore) with consistently warm surface waters
 - Islands with short distances to 1000m depth are most economically favorable
+:::
 
+::: facet temporal_character
 The resource is remarkably stable compared to other renewables: the thermal gradient varies only ~20% seasonally (vs. 200-400% for solar/wind) and maintains 24/7, 365-day availability. El Niño/La Niña events can cause larger variations (up to 50%) in some Pacific locations.
+:::
 
 ### Thermodynamic Constraint
 
+::: facet theoretical_limit
 OTEC operates as a heat engine between two reservoirs. The fundamental limit is the Carnot efficiency:
 
+::: equation carnot_otec
 $$\eta_{Carnot} = \frac{T_H - T_C}{T_H} = \frac{\Delta T}{T_H}$$
+:::
 
 For typical OTEC conditions (T_H = 28°C = 301 K, T_C = 4°C = 277 K, ΔT = 24 K):
 
 $$\eta_{Carnot} = \frac{24}{301} = 7.97\%$$
 
-This is the theoretical maximum. No OTEC system can exceed ~8% thermal efficiency regardless of engineering improvements. Compare this to:
+This is the theoretical maximum. No OTEC system can exceed ~8% thermal efficiency regardless of engineering improvements.
+:::
+
+Compare this to:
 - Coal/gas plants: Carnot limit ~60-65% (ΔT ~500-600°C)
 - Geothermal: Carnot limit 15-25% (ΔT 100-200°C)
 - Concentrated solar thermal: Carnot limit 50-60% (ΔT 400-500°C)
@@ -40,9 +52,11 @@ The low efficiency is not a flaw but an inherent consequence of the small temper
 
 ### System Types
 
+::: facet conversion_pathway
 **1. Closed-Cycle OTEC**
 
 The most common design, proposed by Jacques d'Arsonval in 1881.
+:::
 
 *Process*:
 1. Warm surface seawater (~26-28°C) heats a working fluid with low boiling point
@@ -235,7 +249,9 @@ For comparison: Onshore wind $0.03-0.05/kWh, solar PV $0.03-0.06/kWh, diesel gen
 
 ### Scale Economics
 
+::: facet scale_regime
 OTEC exhibits strong economies of scale:
+:::
 - Capital cost per kW decreases approximately 20% for each doubling of plant size
 - Operating costs per kWh decrease with size
 - Minimum economic scale: likely 10-50 MW for islands, 100+ MW for grid-connected

@@ -1,0 +1,105 @@
+# Solar Heating Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: solar-heating
+name: Solar Heating
+short_description: >
+  Absorbs solar radiation to produce low-grade thermal energy for domestic
+  hot water, space heating, and industrial process heat without concentration.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: solar
+  conversion_pathway: thermal_intermediate
+  theoretical_limit: carnot
+  temporal_character: diurnal_cyclic
+  geographic_constraint: global
+  scale_regime: arbitrarily_modular
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Optical efficiency limit
+    value_percent: 85
+    achieved_percent: 70
+    applies_to: Glazed collector operating at ambient temperature
+    notes: >
+      Unlike power generation, solar heating efficiency is not limited by
+      Carnot (no heat engine). Maximum is optical efficiency (~75-85%).
+      Practical efficiency falls as operating temperature increases due to
+      thermal losses. At 60°C for hot water: 40-60% typical.
+    variants:
+      - name: Flat-plate (domestic hot water)
+        limit_percent: 80
+        achieved_percent: 50
+      - name: Evacuated tube (high temperature)
+        limit_percent: 75
+        achieved_percent: 60
+
+  power_density:
+    peak_w_per_m2: 700
+    average_w_per_m2: 150
+    delivered_w_per_m2: null
+    notes: >
+      Peak is useful heat at typical operating conditions. Annual output:
+      flat-plate 400-800 kWh/m²/year, evacuated tube 500-1000 kWh/m²/year.
+      Primarily rooftop installations with zero additional land use.
+
+  current_status:
+    trl: 9
+    lcoe_range_usd_mwh: [20, 150]
+    global_capacity_gw: 544
+    annual_growth_percent: -3
+    notes: >
+      544 GW_th installed globally (777 million m²). Generates ~443 TWh_th/year.
+      Market contracting since 2013 peak due to competition from heat pumps
+      and cheap PV. LCOH $0.02-0.15/kWh depending on scale and application.
+      Large-scale district heating growing while residential market shrinks.
+
+  temporal:
+    diurnal: true
+    seasonal_variation: high_latitude_affected
+    predictability: high
+    dispatchable: false
+    notes: >
+      Storage tanks (50-100L per m² collector) buffer daily variations.
+      Summer output 2-5x winter output at high latitudes. Seasonal storage
+      possible but expensive (large water tanks, underground thermal storage).
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: concentrated-solar-thermal
+    relationship: alternative_approach
+  - id: heat-pumps
+    relationship: competes_for_sites
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: hottel_whillier_bliss
+    latex: Q_u = F_R \cdot A_c \cdot [\tau\alpha \cdot G - U_L \cdot (T_i - T_{amb})]
+    description: Useful heat extracted from solar collector
+
+  - id: collector_efficiency
+    latex: \eta = F_R \cdot \tau\alpha - F_R \cdot U_L \cdot \frac{(T_i - T_{amb})}{G}
+    description: Collector efficiency as function of temperature rise
+
+  - id: stagnation_temperature
+    latex: T_{stag} = T_{amb} + \frac{\tau\alpha \cdot G}{U_L}
+    description: Maximum temperature when no heat is extracted
