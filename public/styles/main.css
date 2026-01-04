@@ -156,7 +156,8 @@ body {
 .toc {
   position: sticky;
   top: calc(60px + var(--spacing-lg));
-  height: fit-content;
+  max-height: calc(100vh - 60px - var(--spacing-lg) * 2);
+  overflow-y: auto;
   font-size: 0.875rem;
 }
 
