@@ -10,6 +10,14 @@ export function layout({ title, content, scripts = '', styles = '' }) {
   <title>${title} | Clean Energy from First Principles</title>
   <link rel="stylesheet" href="/styles/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-33N1YW8ZDR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-33N1YW8ZDR');
+  </script>
   ${styles}
 </head>
 <body>
