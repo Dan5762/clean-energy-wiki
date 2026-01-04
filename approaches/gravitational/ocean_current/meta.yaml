@@ -1,0 +1,95 @@
+# Ocean Current Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: ocean-current
+name: Ocean Current Energy
+short_description: >
+  Extracts kinetic energy from continuous, unidirectional ocean currents
+  driven by global wind patterns and thermohaline circulation.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: solar
+  conversion_pathway: mechanical_intermediate
+  theoretical_limit: betz_limit
+  temporal_character: continuous
+  geographic_constraint: offshore
+  scale_regime: threshold_scale
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Betz limit with extraction constraints
+    value_percent: 59.3
+    achieved_percent: 35
+    applies_to: Kinetic energy in ocean current flow
+    notes: >
+      Betz limit (59.3%) applies theoretically, but practical extraction limited
+      to 1-10% of current cross-section due to navigation, environmental, and
+      climate concerns. Gulf Stream carries ~1.4 PW heat northward; large-scale
+      extraction could affect regional climate.
+
+  power_density:
+    peak_w_per_m2: 4000
+    average_w_per_m2: 1700
+    delivered_w_per_m2: null
+    notes: >
+      At 1.5 m/s (typical Gulf Stream): ~1,700 W/m². At 2.0 m/s (peak): ~4,000 W/m².
+      Lower than tidal streams (2-4 m/s typical) but continuous flow yields higher
+      capacity factors (60-80% vs 25-35% for tidal).
+
+  current_status:
+    trl: 5
+    lcoe_range_usd_mwh: [300, 500]
+    global_capacity_gw: 0.0001
+    annual_growth_percent: null
+    notes: >
+      Only ~100 kW demonstrated (IHI KAIRYU). No commercial installations.
+      TRL 4-5 overall; individual components at TRL 5-6. IHI targeting 2 MW
+      commercial system by 2030s at 20 yen/kWh (~$130/MWh).
+
+  temporal:
+    diurnal: false
+    seasonal_variation: minimal
+    predictability: high
+    dispatchable: false
+    notes: >
+      Near-continuous flow with 10-30% seasonal variation. No daily slack periods
+      unlike tidal streams. Capacity factors 60-80% achievable. Current position
+      meanders over tens of km; eddies cause temporary disruptions.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: tidal-stream
+    relationship: shares_theoretical_limit
+  - id: wind
+    relationship: shares_source
+  - id: wave
+    relationship: shares_source
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: kinetic_power_fluid
+    latex: P = \frac{1}{2} \rho A V^3
+    description: Power available in flowing fluid (same as wind and tidal stream)
+
+  - id: current_transport
+    latex: Q = \int \int v \, dA
+    description: Volume transport in Sverdrups (1 Sv = 10⁶ m³/s)

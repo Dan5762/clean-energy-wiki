@@ -1,0 +1,97 @@
+# Tidal Stream Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: tidal-stream
+name: Tidal Stream Energy
+short_description: >
+  Extracts kinetic energy from horizontal tidal currents using underwater
+  turbines, functioning like underwater wind turbines in the ocean.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: gravitational
+  conversion_pathway: mechanical_intermediate
+  theoretical_limit: betz_limit
+  temporal_character: predictable_cyclic
+  geographic_constraint: coastal
+  scale_regime: modular
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Betz limit (modified for channel blockage)
+    value_percent: 59.3
+    achieved_percent: 40
+    applies_to: Kinetic energy in tidal current flow
+    notes: >
+      Classical Betz limit (59.3%) applies to unbounded flow. In constrained
+      channels, higher extraction possible due to blockage effects. Practical
+      tidal turbines achieve Cp ≈ 0.35-0.45 in open flow, 0.40-0.50 in arrays.
+      Optimal channel extraction typically 10-25% of undisturbed kinetic flux.
+
+  power_density:
+    peak_w_per_m2: 13838
+    average_w_per_m2: 8008
+    delivered_w_per_m2: null
+    notes: >
+      At 2.5 m/s current: 8,008 W/m² available (vs ~1,058 W/m² for 12 m/s wind).
+      At 3.0 m/s: 13,838 W/m². Seawater ~800× denser than air, so tidal turbines
+      access 4-8× more power per m² swept area than wind turbines at typical
+      operating speeds.
+
+  current_status:
+    trl: 8
+    lcoe_range_usd_mwh: [178, 359]
+    global_capacity_gw: 0.015
+    annual_growth_percent: 30
+    notes: >
+      ~10-15 MW operational globally (MeyGen 6 MW, Orbital O2 2 MW, Nova 0.5 MW,
+      others). LCOE dropped from £300+/MWh (2016) to £178/MWh (2024 CfD). 121 MW
+      UK pipeline under CfD. Industry targets £90-150/MWh by 2030 at scale.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: spring_neap
+    predictability: high
+    dispatchable: false
+    notes: >
+      Perfectly predictable years in advance. Four generation periods per day
+      (two flood, two ebb), with slack water gaps at tide turns. Spring/neap
+      cycle causes 2-4× power variation over ~14 days. Capacity factors 25-35%.
+      Generation often anticorrelated with wind (calm weather = strong tides).
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: tidal-barrage
+    relationship: alternative_approach
+  - id: wind
+    relationship: shares_theoretical_limit
+  - id: wave
+    relationship: shares_source
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: kinetic_power_fluid
+    latex: P = \frac{1}{2} \rho A V^3
+    description: Power available in flowing fluid (applies to both wind and tidal stream)
+
+  - id: power_coefficient
+    latex: P_{extracted} = C_p \times \frac{1}{2} \rho A V^3
+    description: Actual extracted power using power coefficient Cp (max 0.593 Betz limit)
