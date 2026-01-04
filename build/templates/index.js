@@ -40,8 +40,14 @@ export function aboutPage() {
 
       <h2>Contributing</h2>
       <p>
-        This is an open project. Contributions are welcome via GitHub.
+        This is an open project. Contributions are welcome via
+        <a href="https://github.com/Dan5762/clean-energy-wiki">GitHub</a>.
         See the CONTRIBUTING.md file for guidelines on writing content.
+      </p>
+
+      <h2>Author</h2>
+      <p>
+        Created by <a href="https://daniellong.co/">Daniel Long</a>.
       </p>
 
       <h2>License</h2>
