@@ -1,0 +1,103 @@
+# Nuclear Betavoltaics Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: betavoltaics
+name: Nuclear Betavoltaics
+short_description: >
+  Converts kinetic energy of beta particles from radioactive decay directly
+  into electricity using semiconductor junctions, providing microwatt-scale
+  power for decades to millennia.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: nuclear
+  conversion_pathway: direct_electrical
+  theoretical_limit: other
+  temporal_character: baseload
+  geographic_constraint: global
+  scale_regime: arbitrarily_modular
+  material_criticality: fuel_dependent
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Semiconductor bandgap-dependent limit
+    value_percent: 35
+    achieved_percent: 24
+    applies_to: Beta particle energy to electricity via semiconductor
+    notes: >
+      Theoretical efficiency scales with bandgap: Si ~6%, SiC ~18%, diamond
+      ~25-35%. Best demonstrated: 24% (diamond under electron beam). Practical
+      devices: SiC >12%, diamond 9-24%. Losses from self-absorption, backscatter,
+      recombination, and collection efficiency.
+
+  power_density:
+    peak_w_per_m2: null
+    average_w_per_m2: null
+    delivered_w_per_m2: null
+    notes: >
+      Very low power density: 0.001-0.01 W/kg typical. Tritium: 0.32 W/g thermal,
+      Ni-63: 0.006 W/g, C-14: 0.0003 W/g. Output typically 10 nW - 1 mW per device.
+      Energy density exceptional: up to 3,300 mWh/g (Ni-63) delivered over decades.
+
+  current_status:
+    trl: 7
+    lcoe_range_usd_mwh: null
+    global_capacity_gw: null
+    annual_growth_percent: null
+    notes: >
+      Commercial products available (City Labs tritium batteries since 2008).
+      Betavolt (China) announced 100 μW Ni-63/diamond device (2024). Arkenlight
+      (UK) developing C-14 diamond batteries. Russian labs achieved 10 μW/cm³.
+      Niche market for long-duration micropower applications.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: none
+    predictability: high
+    dispatchable: false
+    notes: >
+      Continuous power output following radioactive decay curve. Tritium: 57%
+      power at 10 years, Ni-63: 93% at 10 years, C-14: 99.9% at 10 years.
+      Cannot be modulated. Design for end-of-life power requirement.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: rtg
+    relationship: shares_source
+  - id: photovoltaics
+    relationship: shares_conversion_pathway
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: beta_decay
+    latex: n \rightarrow p + e^- + \bar{\nu}_e
+    description: Beta-minus decay process (neutron to proton, electron, antineutrino)
+
+  - id: ehp_creation
+    latex: N_{EHP} = \frac{E_\beta}{\varepsilon}
+    description: Number of electron-hole pairs from beta particle (ε = ionization energy)
+
+  - id: conversion_efficiency
+    latex: \eta_{total} = \eta_{source} \times \eta_{transport} \times \eta_{collection} \times \eta_{junction}
+    description: Overall betavoltaic conversion efficiency chain
+
+  - id: power_decay
+    latex: P(t) = P_0 \times 2^{-t/t_{1/2}}
+    description: Power output decay following isotope half-life

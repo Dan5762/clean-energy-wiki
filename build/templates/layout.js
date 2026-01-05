@@ -81,6 +81,41 @@ export function layout({ title, content, scripts = '', styles = '' }) {
       });
     })();
   </script>
+  <script>
+    (function() {
+      const header = document.querySelector('.site-header');
+      if (!header) return;
+
+      let lastScrollY = 0;
+      let ticking = false;
+      const scrollThreshold = 60;
+      const scrollDelta = 10;
+
+      function updateHeader() {
+        const currentScrollY = window.scrollY;
+        const delta = currentScrollY - lastScrollY;
+
+        if (currentScrollY > scrollThreshold && delta > scrollDelta) {
+          header.classList.add('collapsed');
+          lastScrollY = currentScrollY;
+        } else if (delta < -scrollDelta || currentScrollY <= scrollThreshold) {
+          header.classList.remove('collapsed');
+          lastScrollY = currentScrollY;
+        }
+
+        ticking = false;
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
 </body>
 </html>`;
 }
