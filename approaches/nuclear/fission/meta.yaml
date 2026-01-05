@@ -1,0 +1,100 @@
+# Nuclear Fission Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: nuclear-fission
+name: Nuclear Fission
+short_description: >
+  Releases energy by splitting heavy atomic nuclei (uranium, plutonium),
+  converting mass to energy via E=mc² with ~3 million times the energy
+  density of fossil fuels.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: nuclear
+  conversion_pathway: thermal_intermediate
+  theoretical_limit: other
+  temporal_character: baseload
+  geographic_constraint: global
+  scale_regime: threshold_scale
+  material_criticality: fuel_dependent
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Mass-energy conversion (E=mc²)
+    value_percent: 0.09
+    achieved_percent: 0.08
+    applies_to: Rest mass of fissile material
+    notes: >
+      Fission converts ~0.09% of fuel mass to energy (~200 MeV per U-235 fission).
+      Thermal efficiency then limits electricity output to 32-41% of heat released.
+      Overall ~0.03% of fuel mass becomes electricity. Compare to fusion (~0.4%
+      mass conversion) and matter-antimatter (100%).
+
+  power_density:
+    peak_w_per_m2: null
+    average_w_per_m2: null
+    delivered_w_per_m2: null
+    notes: >
+      Energy density is the key metric: 83 TJ/kg theoretical (complete U-235
+      fission), ~45 TJ/kg practical, vs 24 MJ/kg for coal. Single 7g fuel pellet
+      equals 17,000 ft³ natural gas. Land use: 0.3 m²/MWh/year (lowest of all
+      sources).
+
+  current_status:
+    trl: 9
+    lcoe_range_usd_mwh: [27, 222]
+    global_capacity_gw: 400
+    annual_growth_percent: 2
+    notes: >
+      ~440 reactors, 400 GWe capacity, 10% of global electricity (2,670 TWh in
+      2024, record high). LCOE varies enormously: China $62/MWh, Russia $27-57,
+      US new-build $142-222. Existing plants $25-40/MWh marginal cost. ~63-70
+      reactors under construction.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: none
+    predictability: high
+    dispatchable: true
+    notes: >
+      Baseload operation typical; 92% capacity factor (US fleet). Can load-follow
+      but usually run at full power for economics. Refueling outages every 18-24
+      months (~30 days). 60-80 year operating life with extensions.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: nuclear-fusion
+    relationship: shares_source
+  - id: geothermal
+    relationship: shares_conversion_pathway
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: fission_reaction
+    latex: ^{235}_{92}U + ^1_0n \rightarrow ^{144}_{56}Ba + ^{90}_{36}Kr + 2^1_0n + \sim200 \text{ MeV}
+    description: Typical U-235 fission reaction releasing ~200 MeV per event
+
+  - id: carnot_efficiency
+    latex: \eta_{Carnot} = 1 - \frac{T_{cold}}{T_{hot}}
+    description: Maximum thermal efficiency limited by temperature difference
+
+  - id: criticality
+    latex: k = \frac{\text{neutrons in generation } n+1}{\text{neutrons in generation } n}
+    description: Criticality factor (k=1 for sustained reaction)

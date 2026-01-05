@@ -1,0 +1,99 @@
+# Nuclear Fusion Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: nuclear-fusion
+name: Nuclear Fusion
+short_description: >
+  Releases energy by combining light atomic nuclei (hydrogen isotopes) into
+  heavier ones, the process powering the Sun, with ~4× higher mass-energy
+  conversion than fission.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: nuclear
+  conversion_pathway: thermal_intermediate
+  theoretical_limit: other
+  temporal_character: baseload
+  geographic_constraint: global
+  scale_regime: threshold_scale
+  material_criticality: fuel_dependent
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Mass-energy conversion (E=mc²)
+    value_percent: 0.4
+    achieved_percent: null
+    applies_to: Rest mass of fusion fuel
+    notes: >
+      D-T fusion converts ~0.4% of fuel mass to energy (17.6 MeV per reaction),
+      ~4× higher than fission. Energy density: 340 million MJ/kg, 14 million×
+      coal. One gram D-T fuel equals 8 tonnes oil. Thermal efficiency ~33-40%
+      for steam cycle; aneutronic fuels could achieve 60-80% direct conversion.
+
+  power_density:
+    peak_w_per_m2: null
+    average_w_per_m2: null
+    delivered_w_per_m2: null
+    notes: >
+      Not applicable in traditional sense. ITER targets 500 MW thermal from
+      840 m³ plasma volume (~600 kW/m³). Fuel consumption: ~100 kg deuterium
+      and 3 tonnes lithium per GW-year. Extremely compact fuel requirements.
+
+  current_status:
+    trl: 5
+    lcoe_range_usd_mwh: null
+    global_capacity_gw: 0
+    annual_growth_percent: null
+    notes: >
+      No commercial plants exist. NIF achieved Q=4.13 (April 2025). ITER targets
+      Q≥10 by 2039. Private investment ~$10 billion cumulative. CFS SPARC
+      targeting first plasma 2026. Helion claims electricity by 2025. Commercial
+      plants optimistically 2035+, realistically 2050+.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: none
+    predictability: high
+    dispatchable: true
+    notes: >
+      Once operational, fusion would provide dispatchable baseload power like
+      fission. Plasma contains only grams of fuel; if confinement lost, reaction
+      stops immediately. Fundamentally different safety profile from fission.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: nuclear-fission
+    relationship: shares_source
+  - id: geothermal
+    relationship: shares_conversion_pathway
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: dt_fusion_reaction
+    latex: ^2_1D + ^3_1T \rightarrow ^4_2He + ^1_0n + 17.6 \text{ MeV}
+    description: Deuterium-tritium fusion reaction, most accessible for terrestrial energy
+
+  - id: lawson_criterion
+    latex: n \cdot \tau_E \cdot T \geq 5 \times 10^{21} \text{ m}^{-3} \cdot \text{s} \cdot \text{keV}
+    description: Triple product threshold for net energy gain (Lawson criterion)
+
+  - id: energy_gain_factor
+    latex: Q = \frac{P_{fusion}}{P_{heating}}
+    description: Ratio of fusion power output to heating power input

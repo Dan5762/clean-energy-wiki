@@ -17,10 +17,10 @@ short_description: >
 facets:
   ultimate_source: gravitational
   conversion_pathway: mechanical_intermediate
-  theoretical_limit: betz_limit
+  theoretical_limit: betz
   temporal_character: predictable_cyclic
   geographic_constraint: coastal
-  scale_regime: modular
+  scale_regime: site_limited
   material_criticality: abundant
 
 # =============================================================================

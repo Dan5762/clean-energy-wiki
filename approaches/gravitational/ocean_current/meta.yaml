@@ -17,9 +17,9 @@ short_description: >
 facets:
   ultimate_source: solar
   conversion_pathway: mechanical_intermediate
-  theoretical_limit: betz_limit
-  temporal_character: continuous
-  geographic_constraint: offshore
+  theoretical_limit: betz
+  temporal_character: predictable_cyclic
+  geographic_constraint: coastal
   scale_regime: threshold_scale
   material_criticality: abundant
 
