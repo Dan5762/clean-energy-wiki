@@ -1,0 +1,113 @@
+# Hydrothermal Geothermal Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: hydrothermal
+name: Hydrothermal Geothermal Energy
+short_description: >
+  Extracts heat from naturally occurring underground reservoirs where hot water
+  or steam has been heated by proximity to hot rock, converting thermal energy
+  to electricity via steam turbines or binary cycle systems.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: primordial
+  conversion_pathway: thermal_intermediate
+  theoretical_limit: carnot
+  temporal_character: dispatchable
+  geographic_constraint: geological
+  scale_regime: site_limited
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Carnot limit (thermal conversion)
+    value_percent: 40
+    achieved_percent: 25
+    applies_to: Heat to electricity via steam/binary cycles
+    notes: >
+      Carnot limit ~26-45% for typical geothermal temperatures (150-300°C hot,
+      40°C cold). Actual plant efficiency: dry steam 20-30%, flash 10-20%,
+      binary 8-15%. Plants achieve 40-60% of Carnot due to irreversibilities,
+      parasitic loads (15-40% of gross), and practical temperature differentials.
+
+  power_density:
+    peak_w_per_m2: null
+    average_w_per_m2: 0.087
+    delivered_w_per_m2: null
+    notes: >
+      Surface heat flow averages 87 mW/m² globally (~0.03% of solar). Power
+      extraction requires concentrated subsurface heat. Land footprint 10-50 ha
+      per 100 MW. High capacity factor (80-95%) yields excellent energy density
+      per unit land area compared to solar/wind.
+
+  current_status:
+    trl: 9
+    lcoe_range_usd_mwh: [50, 80]
+    global_capacity_gw: 16
+    annual_growth_percent: 4
+    notes: >
+      Mature technology (60+ years, first power 1904). Global capacity ~16 GW
+      (2024), ~95-100 TWh/year generation. ~600 plants across 30 countries.
+      LCOE $50-80/MWh average, down to $40/MWh in favorable locations. Growth
+      ~3-5%/year, constrained by geography. Binary plants dominate new US builds.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: none
+    predictability: high
+    dispatchable: true
+    notes: >
+      Continuous baseload generation at 80-95% capacity factor. Unaffected by
+      weather or time of day. Modern plants can load-follow (50-100% range) at
+      2-5%/min ramp rate. Provides grid services: voltage support, inertia,
+      spinning reserve. Limited flexibility compared to gas turbines.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: egs
+    relationship: alternative_approach
+  - id: nuclear-fission
+    relationship: shares_conversion_pathway
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: geothermal_gradient
+    latex: \frac{dT}{dz} \approx 25-30°C/km
+    description: Average rate of temperature increase with depth in continental crust
+
+  - id: heat_flow
+    latex: q = -k\frac{dT}{dz}
+    description: Conductive heat flux from interior (k = thermal conductivity)
+
+  - id: carnot_efficiency
+    latex: \eta_{Carnot} = 1 - \frac{T_c}{T_h}
+    description: Maximum theoretical efficiency for geothermal heat engine
+
+  - id: flash_fraction
+    latex: x_{flash} = \frac{h_1 - h_f}{h_{fg}}
+    description: Mass fraction of water that flashes to steam at pressure drop
+
+  - id: specific_exergy
+    latex: e = (h - h_0) - T_0(s - s_0)
+    description: Available work from geothermal fluid relative to ambient conditions
+
+  - id: utilization_efficiency
+    latex: \eta_u = \frac{W_{net}}{\dot{m} \cdot e}
+    description: Ratio of net power output to exergy input rate
