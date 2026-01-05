@@ -31,6 +31,7 @@
   --color-text: #1a1a1a;
   --color-text-muted: #666;
   --color-background: #fff;
+  --color-surface: #fff;
   --color-border: #e0e0e0;
   --color-border-light: #f0f0f0;
   --color-link: #0066cc;
@@ -39,6 +40,8 @@
   --color-accent-light: #e6f0ff;
   --color-warning: #fff8e6;
   --color-warning-border: #f0d060;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-strong: rgba(0, 0, 0, 0.15);
 
   /* Typography */
   --font-sans: 'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -58,6 +61,79 @@
   --gap-layout: 2rem;
 }
 
+/* Dark mode - explicit toggle */
+:root[data-theme="dark"] {
+  --color-text: #e8e8e8;
+  --color-text-muted: #a0a0a0;
+  --color-background: #121212;
+  --color-surface: #1e1e1e;
+  --color-border: #333;
+  --color-border-light: #2a2a2a;
+  --color-link: #6db3f2;
+  --color-link-hover: #8ec5f5;
+  --color-accent: #6db3f2;
+  --color-accent-light: #1a2d3d;
+  --color-warning: #2d2a1f;
+  --color-warning-border: #8a7530;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-shadow-strong: rgba(0, 0, 0, 0.5);
+}
+
+/* Dark mode - system preference (when no explicit choice) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-text: #e8e8e8;
+    --color-text-muted: #a0a0a0;
+    --color-background: #121212;
+    --color-surface: #1e1e1e;
+    --color-border: #333;
+    --color-border-light: #2a2a2a;
+    --color-link: #6db3f2;
+    --color-link-hover: #8ec5f5;
+    --color-accent: #6db3f2;
+    --color-accent-light: #1a2d3d;
+    --color-warning: #2d2a1f;
+    --color-warning-border: #8a7530;
+    --color-shadow: rgba(0, 0, 0, 0.3);
+    --color-shadow-strong: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Show sun icon by default in system dark mode */
+  :root:not([data-theme]) .theme-toggle .icon-sun {
+    display: block;
+  }
+
+  :root:not([data-theme]) .theme-toggle .icon-moon {
+    display: none;
+  }
+}
+
+/* Light mode - explicit toggle (overrides system dark preference) */
+:root[data-theme="light"] {
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-background: #fff;
+  --color-surface: #fff;
+  --color-border: #e0e0e0;
+  --color-border-light: #f0f0f0;
+  --color-link: #0066cc;
+  --color-link-hover: #004499;
+  --color-accent: #0066cc;
+  --color-accent-light: #e6f0ff;
+  --color-warning: #fff8e6;
+  --color-warning-border: #f0d060;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-strong: rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="light"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .icon-moon {
+  display: block;
+}
+
 /* -----------------------------------------------------------------------------
    Reset & Base
    ----------------------------------------------------------------------------- */
@@ -69,6 +145,7 @@
 html {
   font-size: 16px;
   line-height: 1.6;
+  color-scheme: light dark;
 }
 
 body {
@@ -126,6 +203,7 @@ body {
 
 .site-nav {
   display: flex;
+  align-items: center;
   gap: var(--spacing-md);
 }
 
@@ -137,6 +215,44 @@ body {
 
 .site-nav a:hover {
   color: var(--color-link);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--color-text);
+  background: var(--color-border-light);
+}
+
+/* Show sun icon in dark mode, moon icon in light mode */
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+.theme-toggle .icon-moon {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
 }
 
 /* -----------------------------------------------------------------------------
@@ -426,8 +542,8 @@ cite sup {
   right: 0;
   bottom: 0;
   width: min(600px, 90vw);
-  background: white;
-  box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+  background: var(--color-surface);
+  box-shadow: -4px 0 20px var(--color-shadow-strong);
   overflow-y: auto;
   z-index: 200;
   transform: translateX(100%);
@@ -540,6 +656,8 @@ cite sup {
   border: 1px solid var(--color-border);
   border-radius: 4px;
   font-size: 0.875rem;
+  background: var(--color-surface);
+  color: var(--color-text);
 }
 
 .source-group {
@@ -571,7 +689,7 @@ cite sup {
 
 .tech-card:hover {
   border-color: var(--color-accent);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px var(--color-shadow);
 }
 
 .tech-card h3 {
@@ -624,7 +742,7 @@ cite sup {
     left: 0;
     right: 0;
     top: auto;
-    background: white;
+    background: var(--color-surface);
     border-top: 1px solid var(--color-border);
     padding: var(--spacing-md);
     transform: translateY(100%);
