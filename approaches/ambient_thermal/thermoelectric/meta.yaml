@@ -1,0 +1,106 @@
+# Thermoelectric Energy Conversion Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: thermoelectric
+name: Thermoelectric Energy Conversion
+short_description: >
+  Converts temperature differences directly to electricity via the Seebeck
+  effect in semiconductor junctions, enabling solid-state waste heat recovery
+  and autonomous power for sensors and remote applications.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: ambient_thermal
+  conversion_pathway: direct_electrical
+  theoretical_limit: carnot
+  temporal_character: dispatchable
+  geographic_constraint: global
+  scale_regime: arbitrarily_modular
+  material_criticality: critical_minerals
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Carnot limit modified by ZT
+    value_percent: 40
+    achieved_percent: 7
+    applies_to: TEG at 500K hot / 300K cold (ΔT = 200K)
+    notes: >
+      Carnot efficiency is 40% for ΔT=200K, T_h=500K. Actual efficiency depends
+      on ZT figure of merit: η_max = η_Carnot × (√(1+ZT)-1)/(√(1+ZT)+T_c/T_h).
+      With ZT=1 (current commercial materials), efficiency is ~6-7% (~17% of
+      Carnot). ZT=2 achieves ~12-13% (~32% of Carnot). Laboratory ZT=2.6
+      demonstrated but not in practical devices.
+
+  power_density:
+    peak_w_per_m2: null
+    average_w_per_m2: null
+    delivered_w_per_m2: null
+    notes: >
+      Power density depends on temperature difference and heat flux available.
+      Typical commercial modules produce 2-5 W at ΔT=100°C in a few cm² area.
+      More meaningful metric is power per temperature difference: ~20-50 mW/K
+      per module. System power limited by heat exchanger capacity, not TEG
+      modules themselves.
+
+  current_status:
+    trl: 9
+    lcoe_range_usd_mwh: null
+    global_capacity_gw: null
+    annual_growth_percent: 8
+    notes: >
+      Commercial Bi₂Te₃ modules at TRL 9. Market ~$1 billion (2024), growing
+      6-10% CAGR. Cost $5-15/W for modules, $10-50/W for systems. Primary
+      markets: waste heat recovery (44%), automotive (29%), IoT/wearables (22%).
+      Space RTGs flight-proven over 47+ years (Voyager still operating).
+
+  temporal:
+    diurnal: false
+    seasonal_variation: none
+    predictability: high
+    dispatchable: true
+    notes: >
+      Operates continuously wherever temperature differences exist. No startup
+      time—instant electrical response. Output varies with temperature
+      difference (e.g., vehicle exhaust varies with engine load). No inherent
+      storage; requires batteries for constant output from variable sources.
+      Lifetimes 5-40+ years depending on operating temperature.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: radioisotope-thermoelectric-generator
+    relationship: variant
+  - id: concentrated-solar-thermal
+    relationship: shares_conversion_pathway
+  - id: hydrothermal
+    relationship: shares_conversion_pathway
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: seebeck_voltage
+    latex: V = S \cdot \Delta T
+    description: Open-circuit voltage from Seebeck effect (S = Seebeck coefficient)
+
+  - id: figure_of_merit
+    latex: ZT = \frac{S^2 \sigma T}{\kappa}
+    description: Dimensionless figure of merit determining thermoelectric efficiency
+
+  - id: max_efficiency
+    latex: \eta_{max} = \eta_{Carnot} \cdot \frac{\sqrt{1 + ZT} - 1}{\sqrt{1 + ZT} + T_c/T_h}
+    description: Maximum conversion efficiency as function of ZT and temperatures

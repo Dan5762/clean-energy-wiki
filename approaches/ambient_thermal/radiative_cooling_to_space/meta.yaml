@@ -1,0 +1,105 @@
+# Radiative Cooling to Space Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: radiative-cooling-to-space
+name: Radiative Cooling to Space
+short_description: >
+  Passively rejects heat through the atmospheric transparency window (8-13 μm)
+  to the ~3 K cosmic background, achieving sub-ambient cooling with zero
+  energy input.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: ambient_thermal
+  conversion_pathway: direct_electrical
+  theoretical_limit: other
+  temporal_character: weather_driven
+  geographic_constraint: global
+  scale_regime: arbitrarily_modular
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Atmospheric window radiative flux limit
+    value_percent: null
+    achieved_percent: null
+    applies_to: Net cooling power through 8-13 μm atmospheric window
+    notes: >
+      Maximum theoretical cooling power is ~140-150 W/m² under ideal conditions
+      (clear sky, zero humidity, no convective losses, perfect selective emitter
+      at 300 K). Practical systems achieve 40-120 W/m² depending on atmospheric
+      conditions and material properties. The limit arises from finite bandwidth
+      of atmospheric window (~40% of blackbody emission at 300 K) and non-zero
+      effective sky temperature (220-270 K, not 3 K).
+
+  power_density:
+    peak_w_per_m2: 150
+    average_w_per_m2: 70
+    delivered_w_per_m2: 50
+    notes: >
+      Cooling power density of 40-100 W/m² typical for daytime operation,
+      60-100 W/m² at night. Best demonstrated is 120+ W/m² under optimal
+      conditions. Compared to active cooling systems (~500 W/m² indoor unit),
+      radiative cooling requires large surface areas. 10-25 m² needed per kW
+      of cooling capacity.
+
+  current_status:
+    trl: 7
+    lcoe_range_usd_mwh: null
+    global_capacity_gw: null
+    annual_growth_percent: null
+    notes: >
+      Daytime radiative cooling materials at TRL 7-8, with commercial products
+      entering market (SkyCool Systems, radiative cooling paints). Basic cool
+      roofs at TRL 9. Cost ranges from $5-20/m² for paints to $100-300/m² for
+      integrated panel systems. Market estimated at $27 billion (2025) including
+      cool roof materials. 8,200 m² commercial demonstration in China showed
+      21-65% cooling energy savings.
+
+  temporal:
+    diurnal: true
+    seasonal_variation: moderate
+    predictability: moderate
+    dispatchable: false
+    notes: >
+      Operates continuously but with variable intensity. Nighttime performance
+      typically higher (no solar load). Strong dependence on weather—clear, dry
+      conditions optimal; cloudy/humid conditions may reduce cooling to near
+      zero. Cannot provide cooling on demand. Best suited as passive load
+      reduction rather than primary cooling system.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: heat-pumps
+    relationship: alternative_approach
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: stefan_boltzmann
+    latex: P_{rad} = \varepsilon \sigma T^4
+    description: Stefan-Boltzmann law for radiated power per unit area
+
+  - id: net_cooling_power
+    latex: P_{net} = P_{rad} - P_{solar} - P_{atm} - P_{conv}
+    description: Net cooling power accounting for all heat flows
+
+  - id: sky_emissivity
+    latex: \varepsilon_{sky} = a + b\sqrt{p_{H_2O}}
+    description: Sky emissivity as function of water vapor pressure
