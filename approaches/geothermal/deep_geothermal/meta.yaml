@@ -1,0 +1,106 @@
+# Deep Geothermal and Superhot Rock Energy Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: deep-geothermal
+name: Deep Geothermal and Superhot Rock Energy
+short_description: >
+  Extracts thermal energy from depths of 5-20 km where temperatures exceed 400°C,
+  accessing supercritical water conditions that enable 5-10x more power per well
+  than conventional geothermal systems.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: primordial
+  conversion_pathway: thermal_intermediate
+  theoretical_limit: carnot
+  temporal_character: dispatchable
+  geographic_constraint: global
+  scale_regime: site_developed
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Carnot limit (supercritical conditions)
+    value_percent: 58
+    achieved_percent: 38
+    applies_to: Heat engine at 450°C hot, 30°C cold
+    notes: >
+      Carnot efficiency of 55-60% at supercritical temperatures (400-500°C) vs
+      30-35% for conventional geothermal (180°C). Practical efficiency of 30-45%
+      achieved, representing 60-75% of Carnot limit. The primary advantage is
+      not efficiency alone but the combination of higher efficiency AND higher
+      enthalpy per unit mass (2500-3200 kJ/kg vs 800-1000 kJ/kg), producing
+      5-10x more power per well.
+
+  power_density:
+    peak_w_per_m2: 1000
+    average_w_per_m2: 900
+    delivered_w_per_m2: 800
+    notes: >
+      Exceptionally high power density of 500-1000 W/m² of surface land use,
+      comparable to fossil fuel plants. This is 50-200x more compact than solar
+      PV or wind farms. Wells can be directionally drilled from small pads,
+      minimizing surface footprint. A 1 GW facility requires only 1-2 km².
+
+  current_status:
+    trl: 4
+    lcoe_range_usd_mwh: [150, 300]
+    global_capacity_gw: 0.001
+    annual_growth_percent: null
+    notes: >
+      Technology is in demonstration phase (TRL 3-5). IDDP projects in Iceland
+      have demonstrated supercritical conditions and 36 MW potential from a
+      single well. First closed-loop geothermal (Eavor) delivered grid power
+      December 2025. Current LCOE of $150-300/MWh reflects first-of-a-kind
+      costs; target is $40-60/MWh with drilling breakthroughs.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: none
+    predictability: high
+    dispatchable: true
+    notes: >
+      Fully dispatchable baseload power at 85-95% capacity factor. Ramp rates
+      of minutes to hours (limited by thermal inertia). Can modulate output for
+      grid services, though economics favor baseload operation. This is a key
+      advantage over variable renewables for providing firm clean power.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: hydrothermal
+    relationship: alternative_approach
+  - id: enhanced-geothermal-systems
+    relationship: alternative_approach
+  - id: nuclear-fission
+    relationship: shares_conversion_pathway
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: geothermal_power
+    latex: P = \dot{m} \times (h_{production} - h_{injection}) \times \eta
+    description: Power output as function of mass flow rate and enthalpy difference
+
+  - id: critical_point
+    latex: T_c = 374°C, \quad P_c = 22.1 \text{ MPa}
+    description: Critical point of water defining supercritical transition
+
+  - id: carnot_efficiency
+    latex: \eta_{Carnot} = 1 - \frac{T_{cold}}{T_{hot}}
+    description: Maximum theoretical efficiency for heat engine

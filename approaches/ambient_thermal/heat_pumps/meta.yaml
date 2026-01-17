@@ -1,0 +1,114 @@
+# Heat Pumps Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: heat-pumps
+name: Heat Pumps (Air, Ground, and Water Source)
+short_description: >
+  Uses vapor-compression cycle to move thermal energy from ambient sources
+  (air, ground, water) to buildings, delivering 2-5 units of heat per unit
+  of electrical work input.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: ambient_thermal
+  conversion_pathway: mechanical_intermediate
+  theoretical_limit: carnot
+  temporal_character: dispatchable
+  geographic_constraint: global
+  scale_regime: arbitrarily_modular
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Carnot COP
+    value_percent: null
+    achieved_percent: null
+    applies_to: Heating from 7°C source to 35°C sink
+    notes: >
+      Heat pumps use COP (Coefficient of Performance) rather than efficiency
+      percentage. Carnot COP for typical conditions (7°C to 35°C) is ~11.
+      Practical systems achieve COP 3-5, representing 30-45% of Carnot limit.
+      COP increases as temperature difference decreases, favoring mild climates
+      and low-temperature distribution systems.
+    variants:
+      - name: Air-source (mild climate)
+        limit_percent: null
+        achieved_percent: null
+      - name: Ground-source
+        limit_percent: null
+        achieved_percent: null
+
+  power_density:
+    peak_w_per_m2: null
+    average_w_per_m2: null
+    delivered_w_per_m2: null
+    notes: >
+      Heat pumps are demand-side technology, not generation. Power density
+      is not a meaningful metric. Air-source systems require ~1 m² for outdoor
+      unit. Ground-source requires 600-1200 m² for horizontal loops or
+      ~10 m² for vertical borehole drilling access.
+
+  current_status:
+    trl: 9
+    lcoe_range_usd_mwh: null
+    global_capacity_gw: null
+    annual_growth_percent: 10
+    notes: >
+      Mature technology with ~250 million units installed globally. Heat pumps
+      outsold gas furnaces in US by 30% in 2024. Air-source residential systems
+      cost $8,000-15,000; ground-source $20,000-45,000. Annual sales ~15 million
+      units globally. Market grew ~10% annually 2018-2023, though 2024 saw mixed
+      regional performance (China +13%, US +15%, Europe -21%).
+
+  temporal:
+    diurnal: false
+    seasonal_variation: moderate
+    predictability: high
+    dispatchable: true
+    notes: >
+      On-demand heating/cooling following building load. Efficiency varies with
+      outdoor temperature—COP drops from 4+ at 10°C to 2-2.5 at -10°C for
+      air-source systems. Ground-source maintains stable COP year-round.
+      Can provide demand response and load shifting with thermal storage.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: hydrothermal
+    relationship: shares_source
+  - id: enhanced-geothermal-systems
+    relationship: shares_source
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: heat_pump_energy
+    latex: Q_H = Q_C + W
+    description: Energy balance showing delivered heat equals extracted heat plus work input
+
+  - id: cop_definition
+    latex: COP_{heating} = \frac{Q_H}{W} = \frac{Q_C + W}{W}
+    description: Coefficient of Performance for heating mode
+
+  - id: carnot_cop
+    latex: COP_{Carnot} = \frac{T_H}{T_H - T_C}
+    description: Maximum theoretical COP set by Carnot limit (temperatures in Kelvin)
+
+  - id: carnot_cop_heating
+    latex: COP_{Carnot,heating} = \frac{T_H}{T_H - T_C}
+    description: Carnot COP for heating mode

@@ -1,5 +1,5 @@
 # Technology Metadata Template
-# Copy this file to /content/approaches/your-technology/meta.yaml
+# Copy this file to approaches/category/your-technology/meta.yaml
 # and fill in the values.
 
 # =============================================================================
@@ -9,13 +9,14 @@
 id: your-technology-id          # Lowercase, hyphens for spaces
 name: Your Technology Name      # Human-readable name
 short_description: >
-  One sentence describing what this technology does and how.
+  One or two sentences describing what this technology does and how it works.
+  Use the multi-line > syntax for longer descriptions.
 
 # =============================================================================
 # FACETS (required)
 # =============================================================================
 # These determine how the technology appears in navigation and comparison views.
-# See /content/facets.yaml for valid values and descriptions.
+# Choose one value for each facet from the options listed.
 
 facets:
   ultimate_source:        # solar | gravitational | nuclear | primordial | chemical | ambient_thermal
@@ -23,79 +24,110 @@ facets:
   theoretical_limit:      # carnot | betz | shockley_queisser | landsberg | other
   temporal_character:     # diurnal_cyclic | weather_driven | seasonal | predictable_cyclic | dispatchable | baseload
   geographic_constraint:  # global | coastal | geological | latitude_dependent | river_dependent
-  scale_regime:           # arbitrarily_modular | threshold_scale | site_limited
+  scale_regime:           # arbitrarily_modular | threshold_scale | site_limited | site_developed
   material_criticality:   # abundant | critical_minerals | fuel_dependent | variant_dependent
 
 # =============================================================================
 # COMPARISON DATA (fill in what you can)
 # =============================================================================
 # This data populates comparison tables. Use consistent units.
-# Leave fields blank if data is unavailable or not applicable.
+# Use null for fields that are not applicable.
 
 comparison_data:
-  
+
   # Theoretical limit details
   theoretical_limit:
-    name:                   # Name of the specific limit (e.g., "Carnot", "Betz")
+    name:                   # Name of the specific limit (e.g., "Carnot limit", "Shockley-Queisser limit")
     value_percent:          # The theoretical maximum efficiency (number)
     achieved_percent:       # Best achieved in practice (number)
-    applies_to:             # Conditions for this limit (e.g., "unconcentrated sunlight")
-    
+    applies_to:             # Conditions for this limit (e.g., "single-junction cell under AM1.5")
+    notes: >
+      Detailed explanation of the limit, how it's calculated, why achieved
+      efficiency differs from theoretical, and any important caveats.
+
     # For technologies with multiple variants (optional)
     # variants:
     #   - name: Variant A
-    #     limit_percent: 
-    #     achieved_percent: 
+    #     limit_percent:
+    #     achieved_percent:
     #   - name: Variant B
-    #     limit_percent: 
-    #     achieved_percent: 
+    #     limit_percent:
+    #     achieved_percent:
 
   # Power density
   # Be explicit about what area means (land area, swept area, collector area, etc.)
   power_density:
-    peak_w_per_m2:          # Maximum instantaneous power per unit area
-    average_w_per_m2:       # Time-averaged power per unit area
-    delivered_w_per_m2:     # After all system losses, per land/sea area used
-    notes:                  # Clarify what area measurement refers to
+    peak_w_per_m2:          # Maximum instantaneous power per unit area (number or null)
+    average_w_per_m2:       # Time-averaged power per unit area (number or null)
+    delivered_w_per_m2:     # After all system losses, per land/sea area used (number or null)
+    notes: >
+      Clarify what area measurement refers to. Explain the difference between
+      peak, average, and delivered values. Include relevant context about
+      typical conditions and how values compare to other technologies.
 
   # Current deployment status
   current_status:
     trl:                    # Technology Readiness Level, 1-9
-    lcoe_range_usd_mwh:     # [min, max] in USD per MWh
-    global_capacity_gw:     # Total installed capacity
-    annual_growth_percent:  # Recent annual growth rate
+    lcoe_range_usd_mwh:     # [min, max] as array, e.g., [50, 80], or null if not applicable
+    global_capacity_gw:     # Total installed capacity (number or null)
+    annual_growth_percent:  # Recent annual growth rate (number or null)
+    notes: >
+      Context about current deployment status, major recent developments,
+      cost trends, and key markets or applications.
 
   # Temporal characteristics
   temporal:
-    diurnal: false          # Does output follow day/night cycle?
+    diurnal: false          # Does output follow day/night cycle? (true/false)
     seasonal_variation:     # none | moderate | high_latitude_affected
     predictability:         # high | moderate | low
-    dispatchable: false     # Can output be controlled on demand?
+    dispatchable: false     # Can output be controlled on demand? (true/false)
+    notes: >
+      Explanation of temporal behavior, including capacity factor, how
+      predictable output is, and implications for grid integration.
 
   # Energy density (for technologies involving fuels or storage)
+  # Uncomment if applicable:
   # energy_density:
-  #   gravimetric_wh_per_kg: 
-  #   volumetric_wh_per_l: 
+  #   gravimetric_wh_per_kg:
+  #   volumetric_wh_per_l:
+  #   notes: >
+  #     Context about energy density values and comparisons.
 
 # =============================================================================
-# RELATIONSHIPS (optional)
+# RELATIONSHIPS (optional but recommended)
 # =============================================================================
-# Explicit connections to other technologies or concepts.
-# The relationship field describes how they're related.
+# Explicit connections to other technologies.
+# Use the id from other meta.yaml files.
 
 related:
-  # - id: other-technology-id
-  #   relationship: shares_theoretical_limit | alternative_approach | enabling_technology | variant | competes_for_sites
-  # - id: concept-id
-  #   relationship: governed_by
+  - id: other-technology-id
+    relationship: alternative_approach    # or: shares_source | shares_conversion_pathway | enabling_technology | variant | competes_for_sites
+
+  # Add more relationships as needed:
+  # - id: another-technology-id
+  #   relationship: shares_conversion_pathway
 
 # =============================================================================
-# KEY EQUATIONS (optional)
+# KEY EQUATIONS (optional but recommended)
 # =============================================================================
-# Equations referenced in the content. Enables cross-referencing when the same
-# equation appears in multiple articles.
+# Equations referenced in the content.md file. The id should match the
+# ::: equation id ::: blocks in the content.
 
 equations:
-  # - id: equation_identifier      # Unique ID for this equation
-  #   latex: E = mc^2              # LaTeX markup
-  #   description: Mass-energy equivalence
+  - id: equation_id_1
+    latex: Your LaTeX here
+    description: Brief description of what this equation represents
+
+  - id: equation_id_2
+    latex: Another equation
+    description: Description of this equation
+
+  # Add more equations as needed. Common examples:
+  #
+  # - id: carnot_efficiency
+  #   latex: \eta_{Carnot} = 1 - \frac{T_c}{T_h}
+  #   description: Maximum theoretical efficiency for heat engine
+  #
+  # - id: photon_energy
+  #   latex: E = h\nu = \frac{hc}{\lambda}
+  #   description: Energy of a photon as function of frequency or wavelength

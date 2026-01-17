@@ -1,12 +1,12 @@
 # {{Technology Name}}
 
-<!-- 
+<!--
 TEMPLATE INSTRUCTIONS:
 1. Replace {{Technology Name}} with your technology name
 2. Fill in each section following the prompts
-3. Add ::: facet and ::: limitation annotations as appropriate
-4. Add citations using [@source_key] syntax
-5. Remove these instructions when done
+3. Add ::: facet and ::: limitation blocks as shown
+4. Wrap equations in ::: equation blocks with unique IDs
+5. Remove these instructions and all prompts when done
 -->
 
 ## Fundamental Principle
@@ -47,25 +47,29 @@ What is the primary physical interaction?
 
 ### Physical Processes
 
-What physical processes are involved at each stage?
-What are the key components and their functions?
+Describe the physical processes involved at each stage as a numbered list:
+
+**1. First process**
+
+Description of the first step in the conversion process.
+
+**2. Second process**
+
+Description of the second step.
+
+**3. Third process**
+
+And so on...
 
 ### Conversion Chain
 
-What is the full chain of energy conversions from source to useful output?
-Where in the chain do the principal losses occur?
+Show the full chain of energy conversions:
 
-```
-Source → Step 1 → Step 2 → ... → Useful Output
-           ↓         ↓
-        Losses    Losses
-```
+$$\text{Source} \xrightarrow{\text{step 1}} \text{Intermediate} \xrightarrow{\text{step 2}} \text{Output}$$
 
 ---
 
 ## Theoretical Limits
-
-### Primary Efficiency Limit
 
 ::: facet theoretical_limit
 What fundamental limit governs maximum efficiency?
@@ -77,34 +81,54 @@ What is the numerical value of this limit for typical operating conditions?
 What physical principles give rise to this limit?
 Is it thermodynamic, quantum mechanical, fluid dynamic, or another constraint?
 
-<!-- For Carnot-limited technologies -->
-<!-- 
-The Carnot efficiency between the hot reservoir (T_h) and cold reservoir (T_c) is:
+For Carnot-limited technologies, include:
 
-$$\eta_{\text{Carnot}} = 1 - \frac{T_c}{T_h}$$
+::: equation carnot_efficiency
+$$\eta_{Carnot} = 1 - \frac{T_c}{T_h}$$
+:::
 
-For this technology with T_h = X K and T_c = Y K:
-$$\eta_{\text{Carnot}} = Z\%$$
--->
+With calculated values for typical operating temperatures.
+
+### Practical Efficiency
+
+How does achieved efficiency compare to theoretical limits?
+
+| Configuration | Temperature/Conditions | Efficiency |
+|---------------|------------------------|------------|
+| Variant A     |                        |            |
+| Variant B     |                        |            |
+
+What fraction of theoretical maximum do practical devices achieve, and why?
 
 ### Key Design Tradeoffs
 
-What parameters must be optimised against each other?
+What parameters must be optimized against each other?
 How do design choices shift the balance between different loss mechanisms?
-
-### Relation to Thermodynamic Bounds
-
-How does the primary limit relate to fundamental thermodynamic constraints?
-What fraction of the theoretical maximum do practical devices achieve, and why?
 
 ---
 
 ## Practical Limitations
 
+<!--
+Use ::: limitation blocks with descriptive type names.
+Common types include: geographic_constraint, material_scarcity, manufacturing_complexity,
+exploration_risk, induced_seismicity, intermittency, thermal_drawdown, degradation,
+resource_availability, public_acceptance, regulatory, development_timeline, etc.
+-->
+
+### Geographic/Resource Constraints
+
+::: limitation geographic_constraint
+Where does this approach work well, and where poorly?
+What site characteristics are required?
+How is the resource distributed globally?
+:::
+
 ### Material Constraints
 
 ::: limitation material_scarcity
 Are there any materials that are scarce or have constrained supply chains?
+What are the implications for scaling?
 :::
 
 ::: limitation manufacturing_complexity
@@ -112,23 +136,18 @@ What manufacturing processes are required?
 What are their constraints (energy, precision, scale)?
 :::
 
+### Operational Challenges
+
+::: limitation your_limitation_type
+Describe specific operational limitations relevant to this technology.
+Examples: intermittency, induced_seismicity, thermal_drawdown, degradation, etc.
+:::
+
 ### Degradation and Lifetime
 
 How does performance change over time?
 What are typical operational lifetimes?
 What failure modes dominate?
-
-### Geographic and Resource Constraints
-
-Where does this approach work well, and where poorly?
-What site characteristics are required?
-How is the resource distributed globally?
-
-### Power and Energy Density
-
-What is the power density at point of generation (W/m²)?
-What is the energy density of any fuel or storage medium involved?
-How do these compare to other approaches? [:compare power_density]
 
 ### Temporal Characteristics
 
@@ -144,44 +163,54 @@ If dispatchable:
 - How flexible is operation?
 :::
 
-### System Role and Integration
-
-What role does this technology play in an energy system (baseload, peaking, flexibility)?
-What complementary infrastructure is required (storage, backup, grid reinforcement)?
-Does it provide ancillary services (inertia, frequency response, voltage support)?
-
 ---
 
 ## Scaling Characteristics
 
-### Output Scaling Behaviour
+### Output Scaling Behavior
 
+::: facet scale_regime
 How does output scale with size (linear, economies of scale, diseconomies)?
-How does efficiency vary with scale?
+Is the technology modular or site-limited?
+What factors set minimum and maximum viable scales?
+:::
 
 ### Viable Scale Range
 
-::: facet scale_regime
-What is the minimum viable scale for practical deployment?
-What is the maximum scale achieved or achievable?
-What factors set these limits?
-:::
+**Minimum:** What is the smallest practical deployment?
 
-### Land and Resource Footprint
+**Typical:** What scale are most commercial installations?
+
+**Maximum:** What is the largest achieved or achievable? What limits further scaling?
+
+### Land/Resource Requirements
 
 What land or ocean area is required per unit output?
-What other resources scale with deployment (water, materials, transport infrastructure)?
-Can deployment be co-located with other land uses?
 
 | Scale | Area Required |
 |-------|---------------|
 | 1 MW  |               |
 | 1 GW  |               |
 
-### Deployment Configurations
+Can deployment be co-located with other land uses?
 
-What variant configurations exist?
-How do characteristics vary across configurations?
+### Resource Potential
+
+What is the total global resource potential?
+How does it compare to current deployment and to other energy sources?
+
+| Region | Potential | Notes |
+|--------|-----------|-------|
+| Global |           |       |
+| Key regions |      |       |
+
+### Comparison to Other Sources
+
+| Source | Key Metric 1 | Key Metric 2 | Key Metric 3 |
+|--------|--------------|--------------|--------------|
+| This technology |   |              |              |
+| Comparison A |      |              |              |
+| Comparison B |      |              |              |
 
 ---
 
@@ -189,31 +218,78 @@ How do characteristics vary across configurations?
 
 ### Technology Readiness Level
 
-What is the TRL of the primary technology and key variants?
-What stage of commercialisation has been reached?
+| Technology/Variant | TRL | Status |
+|--------------------|-----|--------|
+|                    |     |        |
 
-| Variant | TRL | Status |
-|---------|-----|--------|
-|         |     |        |
+What stage of commercialization has been reached?
 
-### Economics
+### Levelised Cost of Energy
 
-What is the current LCOE (where meaningful)?
+| Context | LCOE |
+|---------|------|
+| Best projects |    |
+| Typical |          |
+| Challenging |      |
+
 What is the trajectory of costs and what drives it?
-How do costs vary by region and configuration?
 
-| Context | LCOE (USD/MWh) |
-|---------|----------------|
-|         |                |
+### Major Deployments
 
-### Deployment
+**Global capacity:** X GW as of year, generating Y TWh/year
 
-What is current global installed capacity?
-What is the growth rate?
-Where are the major deployments?
+**Top countries/regions:**
+
+| Country | Capacity | Notes |
+|---------|----------|-------|
+|         |          |       |
+
+**Notable projects:**
+
+- **Project A:** Brief description
+- **Project B:** Brief description
 
 ### Research Frontiers
 
 What are the active areas of research and development?
 What breakthroughs would materially change the technology's prospects?
-What is the timeline for emerging variants to reach commercialisation?
+
+**Frontier 1:** Description
+
+**Frontier 2:** Description
+
+---
+
+## Summary
+
+### Key Specifications
+
+| Parameter | Value |
+|-----------|-------|
+| Global capacity |   |
+| Resource potential |   |
+| Capacity factor |   |
+| LCOE |   |
+| Efficiency |   |
+| Emissions |   |
+| Plant/project lifetime |   |
+
+### Strengths and Limitations
+
+**Strengths:**
+- Strength 1
+- Strength 2
+- Strength 3
+
+**Limitations:**
+- Limitation 1
+- Limitation 2
+- Limitation 3
+
+### Role in Energy Landscape
+
+::: facet scale_regime
+What role does this technology play in the broader energy system?
+How does it complement or compete with other sources?
+What is its potential contribution to the energy transition?
+:::

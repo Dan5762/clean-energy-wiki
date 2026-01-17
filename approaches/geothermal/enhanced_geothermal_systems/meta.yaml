@@ -1,0 +1,112 @@
+# Enhanced Geothermal Systems (EGS) Metadata
+
+# =============================================================================
+# IDENTITY
+# =============================================================================
+
+id: enhanced-geothermal-systems
+name: Enhanced Geothermal Systems (EGS)
+short_description: >
+  Creates artificial geothermal reservoirs by hydraulically stimulating hot,
+  low-permeability rock at depth, enabling heat extraction from locations
+  lacking natural hydrothermal resources.
+
+# =============================================================================
+# FACETS
+# =============================================================================
+
+facets:
+  ultimate_source: primordial
+  conversion_pathway: thermal_intermediate
+  theoretical_limit: carnot
+  temporal_character: dispatchable
+  geographic_constraint: global
+  scale_regime: site_developed
+  material_criticality: abundant
+
+# =============================================================================
+# COMPARISON DATA
+# =============================================================================
+
+comparison_data:
+
+  theoretical_limit:
+    name: Carnot limit (thermal conversion)
+    value_percent: 40
+    achieved_percent: 20
+    applies_to: Heat to electricity via binary ORC cycles
+    notes: >
+      Carnot limit ~26-45% for typical EGS temperatures (150-250°C hot, 40°C cold).
+      Binary ORC plants achieve 10-15% net efficiency. Parasitic loads for pumping
+      (circulation through engineered fractures) consume 15-30% of gross output.
+      Higher temperatures at greater depths improve thermodynamic efficiency but
+      increase drilling costs.
+
+  power_density:
+    peak_w_per_m2: null
+    average_w_per_m2: null
+    delivered_w_per_m2: null
+    notes: >
+      Surface heat flow averages 87 mW/m² globally. EGS extracts heat from
+      engineered reservoirs at 2-6 km depth where temperatures reach 150-300°C.
+      Power output depends on flow rate, temperature, and number of well pairs.
+      Fervo targets 10 MW per production well. Land footprint similar to
+      conventional geothermal: 10-50 ha per 100 MW.
+
+  current_status:
+    trl: 7
+    lcoe_range_usd_mwh: [80, 150]
+    global_capacity_gw: 0.004
+    annual_growth_percent: null
+    notes: >
+      First commercial US EGS plant (Fervo Project Red, 3.5 MW) online November
+      2023. Utah FORGE demonstrated commercial-scale reservoir creation (2024).
+      Cape Station (400 MW) under development. Current LCOE $80-150/MWh, DOE
+      target $45/MWh by 2035. Technology transitioning from demonstration to
+      early commercial deployment.
+
+  temporal:
+    diurnal: false
+    seasonal_variation: none
+    predictability: high
+    dispatchable: true
+    notes: >
+      Continuous baseload generation at 80-90% capacity factor. Unaffected by
+      weather or time of day. Provides firm, dispatchable power. Can potentially
+      load-follow though operational experience limited. Thermal drawdown over
+      decades requires reservoir management.
+
+# =============================================================================
+# RELATIONSHIPS
+# =============================================================================
+
+related:
+  - id: hydrothermal
+    relationship: alternative_approach
+  - id: nuclear-fission
+    relationship: shares_conversion_pathway
+
+# =============================================================================
+# KEY EQUATIONS
+# =============================================================================
+
+equations:
+  - id: mohr_coulomb
+    latex: \tau = c + \mu(\sigma_n - P)
+    description: Shear failure criterion for hydroshearing (c = cohesion, P = pore pressure)
+
+  - id: breakdown_pressure
+    latex: P_{breakdown} = 3\sigma_3 - \sigma_1 + T - P_0
+    description: Pressure required for hydraulic fracturing (tensile fracture creation)
+
+  - id: thermal_contraction
+    latex: \Delta L = \alpha L \Delta T
+    description: Thermal stimulation effect from cold water injection
+
+  - id: heat_transfer
+    latex: q = h A (T_{rock} - T_{fluid})
+    description: Conductive heat transfer from rock matrix to circulating fluid
+
+  - id: carnot_efficiency
+    latex: \eta_{Carnot} = 1 - \frac{T_c}{T_h}
+    description: Maximum theoretical efficiency for EGS heat engine
