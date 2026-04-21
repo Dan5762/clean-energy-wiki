@@ -93,6 +93,25 @@ function parseEquationBlocks(markdown) {
 }
 
 /**
+ * Parse standalone display LaTeX ($$...$$) that isn't inside a ::: equation block
+ */
+function parseDisplayLatex(markdown) {
+  const displayPattern = /\$\$([\s\S]+?)\$\$/g;
+
+  return markdown.replace(displayPattern, (match, latex) => {
+    try {
+      return katex.renderToString(latex.trim(), {
+        displayMode: true,
+        throwOnError: false,
+        trust: true
+      });
+    } catch {
+      return match;
+    }
+  });
+}
+
+/**
  * Parse inline LaTeX ($...$)
  */
 function parseInlineLatex(markdown) {
@@ -284,6 +303,9 @@ export function parseMarkdown(markdown, sources = {}) {
   // Parse special links
   transformed = parseCompareLinks(transformed);
   transformed = parseInternalLinks(transformed);
+
+  // Parse remaining $$...$$ display math (outside ::: equation blocks)
+  transformed = parseDisplayLatex(transformed);
 
   // Parse inline LaTeX
   transformed = parseInlineLatex(transformed);
