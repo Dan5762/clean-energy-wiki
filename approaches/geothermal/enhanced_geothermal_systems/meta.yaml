@@ -21,7 +21,7 @@ facets:
   theoretical_limit: carnot
   temporal_character: dispatchable
   geographic_constraint: global
-  scale_regime: site_developed
+  scale_regime: threshold_scale
   material_criticality: abundant
 
 # =============================================================================
