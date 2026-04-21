@@ -80,7 +80,7 @@ No moving parts, no working fluid, no thermal intermediate. This directness is b
 ## Theoretical Limits
 
 ::: facet theoretical_limit
-For a single-junction solar cell under unconcentrated sunlight, the maximum theoretical efficiency is approximately **33%**, known as the **Shockley-Queisser limit**. This was derived by William Shockley and Hans Queisser in 1961 and arises from fundamental thermodynamic and quantum mechanical constraints, not engineering limitations.
+For a single-junction solar cell under unconcentrated sunlight, the maximum theoretical efficiency is approximately **33.7%**, known as the **Shockley-Queisser limit**. This was derived by William Shockley and Hans Queisser in 1961 and arises from fundamental thermodynamic and quantum mechanical constraints, not engineering limitations.
 :::
 
 ### Origin of the Limit
@@ -103,7 +103,7 @@ The operating voltage is always less than E_g/q due to entropy generation. Excit
 
 ### Key Design Tradeoffs
 
-These losses create an optimisation problem. A small bandgap captures more photons but loses more to thermalisation and operates at lower voltage. A large bandgap operates at higher voltage but transmits more of the spectrum. The optimum for the AM1.5 solar spectrum is E_g ≈ 1.34 eV, yielding the 33% limit. Silicon at 1.1 eV has a theoretical maximum of ~29%.
+These losses create an optimisation problem. A small bandgap captures more photons but loses more to thermalisation and operates at lower voltage. A large bandgap operates at higher voltage but transmits more of the spectrum. The optimum for the AM1.5 solar spectrum is E_g ≈ 1.34 eV, yielding the 33.7% limit. Silicon at 1.1 eV has a theoretical maximum of ~29%.
 
 ### Relation to Thermodynamic Bounds
 
@@ -268,11 +268,11 @@ In high-irradiance locations, solar is now the cheapest source of electricity in
 
 ### Major Deployments
 
-Global installed capacity crossed **1.5 TW in 2024**, generating roughly 5-6% of global electricity. Growth is approximately 25-30% annually.
+Global installed capacity reached roughly **2.2 TW by end of 2024 and ~2.8 TW by end of 2025**, generating approximately 7-9% of global electricity. Growth remains near 30% annually (IEA reports ~600 GW added in 2025).
 
 **Largest utility-scale plants:**
 
-- Bhadla Solar Park, India: 2.7 GW
+- Bhadla Solar Park, India: ~2.25 GW
 - Huanghe Hydropower Golmud Solar Park, China: 2.2 GW
 - Several plants in the 1-2 GW range across China, Middle East, and US
 
@@ -280,7 +280,7 @@ Manufacturing is concentrated in China, which produces ~80% of global modules an
 
 ### Research Frontiers
 
-**Tandems:** The most promising near-term route to breaking the single-junction limit. Perovskite-on-silicon tandems have reached 34.6% efficiency in the lab (above the single-junction limit) and are the focus of major commercialisation efforts. The perovskite top cell captures blue/green light while silicon captures red/infrared.
+**Tandems:** The most promising near-term route to breaking the single-junction limit. Perovskite-on-silicon tandems have reached 34.85% NREL-certified efficiency in the lab (LONGi, 2024–25 — above the single-junction limit) and are the focus of major commercialisation efforts. The perovskite top cell captures blue/green light while silicon captures red/infrared.
 
 **Perovskite stability:** Solving degradation under moisture, heat, and illumination is the critical barrier. Encapsulation helps but adds cost and complexity. Compositional engineering (mixed halides, 2D/3D structures) is showing progress.
 

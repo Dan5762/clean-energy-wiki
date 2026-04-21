@@ -359,12 +359,12 @@ The theoretical resource is enormous. Every square meter of Earth's surface faci
 **SkyCool Systems (USA):**
 - Spinout from Stanford research
 - Fluid-cooled panel systems for commercial refrigeration and AC
-- Demonstrated 3 kW cooling addition to commercial systems
+- Demonstrated 25-45 kW cooling capacity added to commercial refrigeration (per CEC 2025 pilots at Red Bluff and Milpitas sites)
 - Field trials in California
 
 **Radiative cooling paints:**
 - Multiple products entering market (2024-2025)
-- Nissan announced paint reducing car interior temperature by 11.7°C (21°F)
+- Nissan demonstrated a radiative-cooling paint reducing exterior surface temperature by ~12°C and car interior temperature by ~5°C (Haneda Airport trial, 2024)
 - Purdue University "whitest paint" achieving 98.1% solar reflectance
 - Various commercial cool roof products with enhanced IR emissivity
 

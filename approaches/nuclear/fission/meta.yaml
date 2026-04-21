@@ -54,10 +54,10 @@ comparison_data:
   current_status:
     trl: 9
     lcoe_range_usd_mwh: [27, 222]
-    global_capacity_gw: 400
+    global_capacity_gw: 377
     annual_growth_percent: 2
     notes: >
-      ~440 reactors, 400 GWe capacity, 10% of global electricity (2,670 TWh in
+      ~416 reactors, ~377 GWe capacity, ~10% of global electricity (2,670 TWh in
       2024, record high). LCOE varies enormously: China $62/MWh, Russia $27-57,
       US new-build $142-222. Existing plants $25-40/MWh marginal cost. ~63-70
       reactors under construction.

@@ -51,11 +51,12 @@ comparison_data:
   current_status:
     trl: 9
     lcoe_range_usd_mwh: [20, 190]
-    global_capacity_gw: 1400
+    global_capacity_gw: 1412
     annual_growth_percent: 2
     notes: >
-      ~1,400 GW total (including 189 GW pumped storage). Generates 4,578 TWh/year
-      (14% of global electricity). LCOE average $57/MWh (range $20-190/MWh).
+      ~1,412 GW total (including 189 GW pumped storage; IHA 2025 reports up to
+      1,443 GW). Generates 4,578 TWh/year (14% of global electricity).
+      LCOE average $57/MWh (range $20-190/MWh).
       24.6 GW added in 2024. Mature technology with limited cost reduction potential.
 
   temporal:

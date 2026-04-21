@@ -52,7 +52,7 @@ The world's strongest surface currents are western boundary currents:
 | Current | Ocean | Peak Speed | Width | Depth | Volume Transport |
 |---------|-------|------------|-------|-------|------------------|
 | Gulf Stream | North Atlantic | >2.5 m/s | 80-150 km | 800-1200 m | 30 Sv |
-| Kuroshio | North Pacific | 1.5-2.5 m/s | 100 km | 500 m | 25-30 Sv |
+| Kuroshio | North Pacific | 1.5-2.5 m/s | 100 km | 400-1200 m | ~42 Sv (Tokara min ~23 Sv; Extension up to 130 Sv) |
 | Agulhas | Indian Ocean | 1.5-2.0 m/s | 100 km | 1000 m | 70 Sv |
 | Brazil | South Atlantic | 0.5-1.0 m/s | 100 km | 600 m | 5-20 Sv |
 | East Australian | South Pacific | 1.0-1.5 m/s | 100 km | 500 m | 15-30 Sv |
@@ -70,11 +70,11 @@ $$P = \frac{1}{2} \rho A V^3$$
 :::
 
 For the Florida Current (Gulf Stream's origin):
-- Cross-sectional area: ~3,200 km² (80 km wide × 40 m effective extraction depth)
+- Cross-sectional area: ~3.2 km² = 3.2×10⁶ m² (80 km wide × 40 m effective extraction depth)
 - Mean velocity: ~1.5 m/s (depth-averaged)
 - Water density: 1,025 kg/m³
 
-Total kinetic power ≈ ½ × 1,025 × 3.2×10⁹ × 1.5³ = 5.5 GW (order of magnitude)
+Total kinetic power ≈ ½ × 1,025 × 3.2×10⁶ × 1.5³ = 5.5 GW (order of magnitude)
 
 More detailed modeling estimates the undisturbed kinetic energy flux in the Florida Current at **20-25 GW**, making it one of the most concentrated renewable energy resources on Earth.
 
@@ -159,7 +159,7 @@ Large-scale extraction would:
 
 1. **Reduce current velocity**: Turbine drag slows the flow
 2. **Redirect flow**: Current may divert around extraction zones
-3. **Alter heat transport**: Western boundary currents carry enormous heat from tropics to poles; the Gulf Stream transports ~1.4 PW (petawatts) of heat northward
+3. **Alter heat transport**: Western boundary currents carry enormous heat from tropics to poles; the Gulf Stream transports ~2.5 PW (petawatts) of heat northward at the Florida Straits (26.5°N)
 4. **Change sea level**: Gulf Stream creates ~1 m sea level difference across Florida Strait
 
 Modeling studies suggest practical extraction limits:

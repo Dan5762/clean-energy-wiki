@@ -295,7 +295,7 @@ Hydropower potential is geographically uneven:
 
 Global hydropower fleet (end 2024):
 
--   Total capacity: ~1,250-1,400 GW (including PSH)
+-   Total capacity: ~1,410-1,443 GW (including PSH)
 -   Conventional hydropower: ~1,060-1,210 GW
 -   Pumped storage: ~189 GW
 -   Annual generation: ~4,578 TWh (14% of global electricity)
@@ -304,7 +304,7 @@ Global hydropower fleet (end 2024):
 
 ### Global Deployment (2024)
 
-**Installed capacity**: ~1,250-1,400 GW total
+**Installed capacity**: ~1,410-1,443 GW total
 
 -   Conventional: ~1,060-1,210 GW
 -   Pumped storage: 189 GW

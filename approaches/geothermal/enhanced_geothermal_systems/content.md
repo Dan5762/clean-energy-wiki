@@ -363,7 +363,7 @@ Cost reduction pathways include drilling improvements (50% potential), learning 
 
 | Parameter | Value |
 |-----------|-------|
-| Current global capacity | ~4 MW (first commercial plant 2023) |
+| Current global capacity | ~4-10 MW (Fervo Project Red 3.5 MW 2023 + Soultz 1.5 MW since 2008; Cape Station Phase I 100 MW targeted late 2026) |
 | US resource potential (3-7 km) | 4,349 GW |
 | Global resource potential (8 km) | ~600 TW |
 | Typical depth | 2-6 km |

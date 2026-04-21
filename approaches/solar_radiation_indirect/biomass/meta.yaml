@@ -62,10 +62,10 @@ comparison_data:
   current_status:
     trl: 9
     lcoe_range_usd_mwh: [50, 150]
-    global_capacity_gw: 158
+    global_capacity_gw: 151
     annual_growth_percent: 4
     notes: >
-      Biopower: 158 GW, ~700 TWh/year (2.5% of global electricity).
+      Biopower: ~151 GW (IRENA end-2024), ~700 TWh/year (2.5% of global electricity).
       Biofuels: 175 billion liters/year (~4% of transport fuel).
       LCOE $50-150/MWh for biopower. Ethanol $0.60-1.50/gallon.
       Traditional biomass ~25 EJ/year (declining share).

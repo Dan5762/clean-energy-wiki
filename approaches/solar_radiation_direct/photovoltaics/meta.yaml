@@ -31,21 +31,22 @@ comparison_data:
 
   theoretical_limit:
     name: Shockley-Queisser limit
-    value_percent: 33
-    achieved_percent: 26.8
+    value_percent: 33.7
+    achieved_percent: 27.8
     applies_to: Single-junction cell under unconcentrated AM1.5 sunlight
     notes: >
-      Optimum bandgap is ~1.34 eV for 33% limit. Silicon (1.1 eV) has
-      theoretical max of ~29%. Best lab silicon cell: 26.8%. Best commercial
-      modules: 22-24%. Multi-junction cells can exceed 47% in lab.
+      Optimum bandgap is ~1.34 eV for 33.7% limit. Silicon (1.1 eV) has
+      theoretical max of ~29%. Best lab silicon cell: 27.81% (LONGi HIBC,
+      2025). Best commercial modules: 22-24%. Multi-junction cells exceed
+      47% in lab.
     variants:
       - name: Crystalline silicon
         limit_percent: 29
-        achieved_percent: 26.8
+        achieved_percent: 27.8
       - name: Perovskite-silicon tandem
         limit_percent: 45
-        achieved_percent: 34.6
-      - name: III-V triple junction (concentrated)
+        achieved_percent: 34.85
+      - name: III-V four-junction (concentrated)
         limit_percent: 50
         achieved_percent: 47.6
 
@@ -61,12 +62,12 @@ comparison_data:
   current_status:
     trl: 9
     lcoe_range_usd_mwh: [15, 60]
-    global_capacity_gw: 1500
-    annual_growth_percent: 28
+    global_capacity_gw: 2800
+    annual_growth_percent: 30
     notes: >
       LCOE varies from $15-25/MWh (excellent sites) to $40-60/MWh (moderate
-      resource). 1.5 TW installed as of 2024, growing ~25-30%/year.
-      Generates 5-6% of global electricity.
+      resource). ~2.8 TW installed by end of 2025 (~2.2 TW end of 2024),
+      growing ~30%/year. Generates ~7-9% of global electricity.
 
   temporal:
     diurnal: true

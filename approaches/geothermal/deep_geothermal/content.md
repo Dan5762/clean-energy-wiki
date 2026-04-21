@@ -314,16 +314,16 @@ Cost trajectory depends critically on drilling technology advances. Fervo has de
 
 | Project | Location | Depth | Temperature | Status |
 |---------|----------|-------|-------------|--------|
-| IDDP-1 | Krafla, Iceland | 2.1 km | 900°C (magma) | 36 MWe demonstrated, well collapsed |
+| IDDP-1 | Krafla, Iceland | 2.1 km | 900°C (magma) | Produced superheated steam equivalent to ~36 MWe (well shut in 2012 after valve failures) |
 | IDDP-2 | Reykjanes, Iceland | 4.66 km | 427°C+ | Supercritical confirmed, casing failed |
 | Quaise field test | Texas, USA | 100 m | N/A | MMW drilling demonstrated |
 | Eavor Geretsried | Germany | 4.5 km | ~150°C | First closed-loop grid power (Dec 2025) |
 
 **Notable achievements:**
 
-- **IDDP-1 (2009-2012):** World's first magma-enhanced geothermal system, demonstrated 36 MWe potential from single well at supercritical conditions
+- **IDDP-1 (2009-2012):** World's first magma-enhanced geothermal system; produced 450°C wellhead steam with ~36 MWe of electrical-equivalent capacity (no generator was ever connected; well shut in 2012)
 - **IDDP-2 (2017):** First well to successfully reach and confirm active supercritical hydrothermal conditions
-- **Quaise (2025):** First field demonstration of millimeter wave drilling, achieving 5 m/hr in granite (10x conventional)
+- **Quaise (2025):** First field demonstration of millimeter-wave drilling, reaching ~10× the rate of prior MMW lab baselines (conventional rotary drilling in granite already achieves similar rates)
 - **Eavor (2025):** First closed-loop geothermal electricity delivered to grid
 
 ### Research Frontiers

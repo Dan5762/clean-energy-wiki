@@ -54,11 +54,11 @@ comparison_data:
   current_status:
     trl: 9
     lcoe_range_usd_mwh: [50, 80]
-    global_capacity_gw: 16
+    global_capacity_gw: 17.2
     annual_growth_percent: 4
     notes: >
-      Mature technology (60+ years, first power 1904). Global capacity ~16 GW
-      (2024), ~95-100 TWh/year generation. ~600 plants across 30 countries.
+      Mature technology (60+ years, first power 1904). Global capacity ~17.2 GW
+      (end of 2025), ~95-100 TWh/year generation. ~600 plants across 30 countries.
       LCOE $50-80/MWh average, down to $40/MWh in favorable locations. Growth
       ~3-5%/year, constrained by geography. Binary plants dominate new US builds.
 

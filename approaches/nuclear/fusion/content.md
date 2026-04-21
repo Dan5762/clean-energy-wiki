@@ -312,7 +312,7 @@ A dramatic shift has occurred since ~2015, with private companies raising billio
 - Technology: Compact tokamak with high-temperature superconducting (HTS) magnets
 - Funding: ~$3 billion total (including $863M in August 2025)
 - Key innovation: HTS magnets enable smaller, cheaper tokamaks
-- Status: SPARC demonstration device ~65% complete; first plasma targeted 2026
+- Status: SPARC demonstration device under construction; first plasma now targeted late 2026 / early 2027 (slipped from earlier 2026 goal)
 - Target: Q > 2 in SPARC; commercial ARC plant (400 MW) in Virginia
 - Partners: MIT, Google (200 MW purchase agreement)
 
@@ -321,7 +321,7 @@ A dramatic shift has occurred since ~2015, with private companies raising billio
 - Funding: ~$1 billion
 - Fuel: D-He³ (deuterium-helium-3), with He³ bred from D-D reactions
 - Innovation: Direct electricity generation via electromagnetic induction (no steam turbine)
-- Status: Polaris (7th prototype) complete; first electricity expected 2025
+- Status: Polaris (7th prototype) began operation late 2024; net electricity target of 2025 has slipped — no net-electricity production demonstrated as of early 2026
 - Target: Commercial power by 2028 (50 MW Orion plant for Microsoft)
 - Investors: Sam Altman, OpenAI, Microsoft
 
@@ -345,9 +345,8 @@ A dramatic shift has occurred since ~2015, with private companies raising billio
 - Status: Demo 4 device under development
 
 **Pacific Fusion** - USA
-- Technology: Inertial confinement with electromagnetic compression
+- Technology: Pulsed magnetic inertial confinement (electromagnetic compression)
 - Funding: $900 million Series A (2024)
-- Leadership: Eric Lander (Human Genome Project)
 
 **Focused Energy** - Germany/USA
 - Technology: Laser-driven inertial fusion
@@ -499,7 +498,7 @@ Fusion power plant costs are highly uncertain since none exist:
 
 **Private company targets:**
 - CFS: First electricity 2027, commercial plant 2030s
-- Helion: Electricity 2025, commercial 2028
+- Helion: Electricity target of 2025 slipped; commercial 2028 remains stated goal
 - TAE: Commercial early 2030s
 
 **Reality check:**

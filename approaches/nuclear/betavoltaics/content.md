@@ -23,7 +23,7 @@ The emitted electron carries kinetic energy ranging from near-zero to a maximum 
 | Isotope | Half-life | E_max (keV) | E_avg (keV) | Decay Product |
 |---------|-----------|-------------|-------------|---------------|
 | Tritium (³H) | 12.3 years | 18.6 | 5.7 | ³He (stable) |
-| Nickel-63 | 100.1 years | 66.9 | 17.4 | ⁶³Cu (stable) |
+| Nickel-63 | 101.2 years | 66.9 | 17.4 | ⁶³Cu (stable) |
 | Carbon-14 | 5,730 years | 156 | 49 | ¹⁴N (stable) |
 | Promethium-147 | 2.62 years | 225 | 62 | ¹⁴⁷Sm (stable) |
 | Strontium-90 | 28.8 years | 546 | 196 | ⁹⁰Y → ⁹⁰Zr |
@@ -211,7 +211,7 @@ Tritium is the most commercially developed betavoltaic fuel, used by City Labs (
 ### Nickel-63 (⁶³Ni)
 
 **Properties:**
-- Half-life: 100.1 years
+- Half-life: 101.2 years
 - Maximum beta energy: 66.9 keV
 - Average beta energy: 17.4 keV
 - Specific activity: 57 Ci/g

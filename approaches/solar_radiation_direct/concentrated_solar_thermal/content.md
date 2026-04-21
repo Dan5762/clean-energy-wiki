@@ -521,12 +521,12 @@ NREL projections suggest CST with 10 hours storage could reach $50-70/MWh by 203
 
 ### Major Deployments
 
-**Global installed capacity:** ~6.7 GW (end of 2023)
+**Global installed capacity:** ~7.2 GW (end of 2024), rising further with Chinese additions.
 
 **Leading countries by installed capacity:**
 1. Spain: ~2.3 GW (largely 50 MW trough plants built 2008-2013)
 2. United States: ~1.8 GW (primarily SEGS, Ivanpah, Crescent Dunes)
-3. China: ~0.6 GW (growing rapidly under 14th Five-Year Plan)
+3. China: ~1.1-1.2 GW operational (mid-2025), with >8 GW in pipeline under 14th Five-Year Plan
 4. Morocco: ~0.5 GW (Noor-Ouarzazate complex)
 5. South Africa: ~0.5 GW (various REIPPP projects)
 

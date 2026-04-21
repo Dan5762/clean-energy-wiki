@@ -270,7 +270,7 @@ Given the high capacity factor (80-95%), land use per unit energy is competitive
 ### Resource Potential
 
 Global conventional hydrothermal potential is estimated at ~200 GW, constrained by the requirement for heat, fluid, and permeability to coexist naturally. This compares to:
-- Current installed: ~16 GW
+- Current installed: ~17.2 GW (end of 2025)
 - Enhanced Geothermal Systems potential: >5,000 GW
 - Solar potential: >100,000 GW
 
@@ -299,7 +299,7 @@ Geothermal's high capacity factor means installed capacity translates efficientl
 | Combined flash-binary | 9 | Commercial |
 | Supercritical systems | 4-5 | Experimental (IDDP) |
 
-Hydrothermal geothermal is a mature technology with over 110 years of operational history.
+Hydrothermal geothermal is a mature technology with over 110 years of operational history (first commercial plant at Larderello, 1913).
 
 ### Levelised Cost of Energy
 
@@ -315,7 +315,7 @@ LCOE is competitive with fossil fuels in favorable locations but generally highe
 
 ### Major Deployments
 
-**Global capacity (2024):** ~16 GW across 30+ countries, generating ~95-100 TWh/year (~0.3% of global electricity)
+**Global capacity (end of 2025):** ~17.2 GW across 30+ countries, generating ~95-100 TWh/year (~0.3% of global electricity)
 
 **Top countries:**
 
@@ -356,7 +356,7 @@ LCOE is competitive with fossil fuels in favorable locations but generally highe
 
 | Parameter | Value |
 |-----------|-------|
-| Global capacity (2024) | ~16 GW |
+| Global capacity (end of 2025) | ~17.2 GW |
 | Annual generation | ~95-100 TWh |
 | Global potential (conventional) | ~200 GW |
 | Capacity factor | 80-95% |

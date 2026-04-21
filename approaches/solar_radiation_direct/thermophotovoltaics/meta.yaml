@@ -53,7 +53,7 @@ comparison_data:
     notes: >
       Emitter at 2000°C radiates ~1.5 MW/m² (Stefan-Boltzmann T⁴ law).
       At 40% efficiency, ~600 kW/m² cell area. Extremely compact - 1 MW
-      from ~20 m² array. Power density 1000x higher than solar PV.
+      from ~20 m² array. Power density ~1500x higher than unconcentrated sunlight.
 
   current_status:
     trl: 7

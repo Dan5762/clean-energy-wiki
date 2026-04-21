@@ -345,7 +345,7 @@ Tidal stream energy has demonstrated rapid cost reduction:
 | 2018 | £359/MWh | ORE Catapult estimate |
 | 2022 | £213/MWh | UK CfD AR4 strike price |
 | 2023 | £198/MWh | UK CfD AR5 strike price |
-| 2024 | £178/MWh | UK CfD AR6 strike price |
+| 2024 | £172/MWh | UK CfD AR6 strike price (2012 prices) |
 | Target 2030 | £90-150/MWh | Industry projections |
 
 This represents >40% cost reduction in 6 years with minimal deployment. The trajectory mirrors early offshore wind, which achieved 60%+ cost reduction from 2012 to 2020 as deployment scaled from GW to tens of GW.
@@ -403,7 +403,7 @@ Tidal energy total installed capacity (including barrages): ~530 MW globally
 - Annapolis Royal (Canada): 20 MW (decommissioned 2019)
 - Small Chinese and Russian plants: ~6 MW
 
-**Tidal stream capacity**: ~10-15 MW operational (as of late 2024)
+**Tidal stream capacity**: ~20 MW operational globally (as of late 2024; UK ~19 MW, France ~6.5 MW per Ocean Energy Europe)
 
 Tidal stream represents <3% of total tidal capacity but >90% of current development activity.
 
@@ -428,10 +428,10 @@ Tidal stream represents <3% of total tidal capacity but >90% of current developm
 
 **Nova Innovation Shetland Tidal Array (Scotland)**
 - Location: Bluemull Sound, Shetland
-- Capacity: ~0.5 MW
+- Capacity: 0.6 MW (6 × 100 kW turbines after 2023 expansion)
 - Operational: 2016 onwards
 - Technology: Seabed-mounted small turbines (100 kW each)
-- Key achievement: >80,000 cumulative turbine operating hours
+- Key achievement: ~65,000 cumulative turbine operating hours (as of 2024)
 - 6 MW expansion awarded CfD in 2024
 
 **Sabella D10 (France)**
@@ -465,7 +465,7 @@ Tidal stream represents <3% of total tidal capacity but >90% of current developm
 **UK tidal stream pipeline**: 121 MW contracted under CfD (AR4-AR6) for delivery by 2029
 - AR4 (2022): 41 MW at £178/MWh
 - AR5 (2023): 53 MW at £198/MWh
-- AR6 (2024): 28 MW at £178/MWh
+- AR6 (2024): 28 MW at £172/MWh (2012 prices)
 
 **European pipeline**: 165 MW of publicly funded projects planned over next 5 years (152 MW tidal stream)
 
@@ -590,7 +590,7 @@ Tidal stream's ultimate role depends on:
 | Technology | Global Potential | Current Status | Outlook |
 |------------|-----------------|----------------|---------|
 | Tidal barrage | 100-200 GW | 520 MW installed | Limited by site constraints and environmental impact |
-| Tidal stream | 50-150 GW | 10-15 MW installed | Best prospects; technology maturing |
+| Tidal stream | 50-150 GW | ~20 MW installed | Best prospects; technology maturing |
 | Wave energy | 500-2,000 GW | <5 MW installed | Earlier stage; higher technical challenges |
 | OTEC | 10-80 GW | <1 MW operational | Very early stage; limited to tropics |
 

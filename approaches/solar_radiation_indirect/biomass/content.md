@@ -23,7 +23,7 @@ Solar radiation reaching Earth's surface averages approximately 170 W/m² (after
 - Plants absorb roughly 90% of incident PAR (10% is reflected, which is why plants appear green)
 - Multiple conversion losses reduce the energy actually stored in biomass
 
-Global net primary productivity (NPP), the total biomass produced annually by photosynthesis minus plant respiration, is approximately 100-120 billion tonnes of carbon per year, equivalent to roughly 4,500 EJ of chemical energy. For comparison, global primary energy consumption is about 600 EJ/year, meaning photosynthesis captures approximately 7-8× humanity's energy needs.
+Global net primary productivity (NPP), the total biomass produced annually by photosynthesis minus plant respiration, is approximately 55-60 billion tonnes of carbon per year, equivalent to roughly 2,200 EJ of chemical energy (gross primary productivity is about 120 Gt C/yr). For comparison, global primary energy consumption is about 600 EJ/year, meaning net photosynthesis captures approximately 3-4× humanity's energy needs.
 
 However, most of this biomass is unavailable: it grows in inaccessible locations, supports ecosystems, decomposes naturally, or serves as food. The practically harvestable fraction for energy is a small subset.
 
@@ -389,7 +389,7 @@ Even optimistic estimates suggest biofuels could supply only 15-25% of transport
 
 | Fuel Type | Global Production | Key Producers |
 |-----------|------------------|---------------|
-| Fuel ethanol | ~110 billion liters | US (45%), Brazil (28%), EU (5%) |
+| Fuel ethanol | ~110 billion liters | US (~55%), Brazil (~32%), EU (~5%) |
 | Biodiesel (FAME) | ~50 billion liters | Indonesia (28%), EU (26%), Brazil (14%) |
 | Renewable diesel (HVO) | ~15 billion liters | US, Singapore, Finland |
 | Sustainable aviation fuel | ~1.8 billion liters | Growing rapidly from 0.6B in 2023 |
@@ -407,7 +407,7 @@ Total biofuel production: ~175 billion liters (~4 EJ), representing ~4% of globa
 
 | Parameter | 2024 Value |
 |-----------|------------|
-| Global capacity | 150-158 GW |
+| Global capacity | ~151 GW |
 | Global generation | ~700 TWh |
 | Share of global electricity | ~2.5% |
 | Share of renewable electricity | ~7% |

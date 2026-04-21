@@ -191,7 +191,7 @@ High-performance thermoelectric materials are expensive:
 - **Skutterudites:** Require rare earth elements for optimal performance
 - **Half-Heuslers:** Complex ternary compounds requiring precise stoichiometry
 
-Tellurium scarcity is a significant concern. Global tellurium production is only ~500 tonnes/year, primarily as a byproduct of copper refining. Massive TEG deployment would strain this supply.
+Tellurium scarcity is a significant concern. Global tellurium production is only ~640-1,180 tonnes/year (USGS 2024 reports ~640 t; other trackers place recent output above 1,000 t), primarily as a byproduct of copper refining. Massive TEG deployment would strain this supply.
 :::
 
 ::: limitation material_toxicity
@@ -271,7 +271,7 @@ Typical lifetimes:
 - Automotive (high ΔT, cycling): 5-10 years
 - Industrial (steady high T): 10-15 years
 - Low-temperature (wearables, IoT): 15-20 years
-- Space (RTGs): 20-40+ years (Voyager RTGs still operating after 47 years)
+- Space (RTGs): 20-40+ years (Voyager RTGs still operating after 48+ years)
 
 ---
 

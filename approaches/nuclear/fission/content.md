@@ -51,7 +51,7 @@ The energy density advantage of nuclear fuel over chemical fuels is extraordinar
 
 A single uranium fuel pellet (about 7 grams) contains energy equivalent to approximately:
 - 17,000 cubic feet of natural gas
-- 1,780 pounds of coal
+- 1 ton (~2,000 pounds) of coal
 - 149 gallons of oil
 
 This extreme energy density is nuclear power's fundamental advantage: enormous energy from minimal fuel mass, minimal mining, and minimal waste volume (though waste toxicity remains a challenge).
@@ -281,8 +281,8 @@ Nuclear produces far less waste by volume than fossil fuels, but waste toxicity 
 ### Installed Capacity (2024-2025)
 
 **Global totals:**
-- Operating reactors: ~440
-- Operating capacity: ~395-400 GWe
+- Operating reactors: ~416
+- Operating capacity: ~377 GWe
 - Electricity generated (2024): ~2,670 TWh (record high)
 - Share of global electricity: ~10%
 
@@ -676,7 +676,7 @@ Modern plants are designed to withstand aircraft impact and other threats.
 Nuclear's potential contribution to climate mitigation:
 
 **IEA Net Zero Scenario:**
-- Nuclear doubles by 2050 (from ~400 GW to ~800 GW)
+- Nuclear doubles by 2050 (from ~377 GW to ~800 GW)
 - Requires ~30 GW/year of new construction (vs. ~5-7 GW/year currently)
 
 **IPCC scenarios:**
@@ -737,7 +737,7 @@ Nuclear and renewables are often framed as competitors, but both are needed for 
 
 ### Conclusion
 
-Nuclear fission offers an extraordinarily energy-dense, low-carbon power source that has operated safely and reliably for over 60 years. Its ~400 GW global capacity generates 10% of world electricity with minimal emissions, land use, and fuel requirements.
+Nuclear fission offers an extraordinarily energy-dense, low-carbon power source that has operated safely and reliably for over 60 years. Its ~377 GW global capacity generates ~10% of world electricity with minimal emissions, land use, and fuel requirements.
 
 The technology faces genuine challenges:
 - High capital costs and long construction times (especially in Western countries)

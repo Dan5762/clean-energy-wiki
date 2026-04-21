@@ -423,7 +423,7 @@ Wind is a mature technology with continued incremental improvements in efficienc
 **Geographic distribution:**
 | Country | Capacity (GW) | Share |
 |---------|--------------|-------|
-| China | 470+ | 41% |
+| China | ~520 | 46% |
 | United States | 155 | 14% |
 | Germany | 73 | 6% |
 | India | 47 | 4% |

@@ -194,8 +194,8 @@ Studies of the Severn Estuary suggest a barrage would reduce the tidal range wit
 ### Global Resource Limit
 
 The total global dissipation of tidal energy is approximately 3.7 TW, of which:
-- ~2.5 TW dissipates in the deep ocean
-- ~1.2 TW dissipates in shallow coastal waters
+- ~2.5 TW dissipates in shallow coastal waters (seas, estuaries, continental shelves)
+- ~1.0 TW dissipates in the deep ocean (primarily via internal tides over rough topography; Egbert & Ray 2000)
 
 Only the coastal dissipation is potentially accessible, and only a fraction occurs at sites suitable for barrages. Various estimates suggest:
 

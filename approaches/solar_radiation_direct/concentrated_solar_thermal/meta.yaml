@@ -62,11 +62,12 @@ comparison_data:
   current_status:
     trl: 9
     lcoe_range_usd_mwh: [70, 180]
-    global_capacity_gw: 6.7
+    global_capacity_gw: 7.2
     annual_growth_percent: 8
     notes: >
-      LCOE varies from $70-90/MWh (best projects) to $120-180/MWh (Europe).
-      6.7 GW installed globally. Spain leads at 2.3 GW. Most new projects
+      LCOE varies from $70-90/MWh (best projects) to $120-180/MWh (Europe);
+      IRENA global weighted average fell to ~$92/MWh in 2024.
+      ~7.2 GW installed globally (end of 2024). Spain leads at 2.3 GW. Most new projects
       include 10-15 hours thermal storage. Declining deployment compared to PV.
 
   temporal:

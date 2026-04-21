@@ -376,7 +376,7 @@ The jump from ~32% to >40% represents a fundamental breakthrough enabling therma
 - Opened world's first TPV manufacturing facility (2 MW/year capacity, 2024)
 - Demonstrated >40% TPV efficiency
 - First commercial-scale thermal battery deployed at industrial site near Fresno, CA
-- Raised $150M+ from Breakthrough Energy Ventures, Shell Ventures, and others
+- Raised ~$244M+ cumulative by late 2025 (including 2024 $150M Series B led by Decarbonization Partners, with Breakthrough Energy, Lowercarbon, Shell Ventures, and others)
 - Product: Industrial heat and power from thermal batteries charged by renewable electricity
 
 **Fourth Power** (Boston):
